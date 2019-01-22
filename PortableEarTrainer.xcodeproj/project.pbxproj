@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B987D785607526A54BCD554 /* Pods_PortableEarTrainerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8908BAAD0EBA8AD40598B6 /* Pods_PortableEarTrainerUITests.framework */; };
 		3722A5B121F6935F00F5F353 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3722A5B021F6935F00F5F353 /* AppDelegate.swift */; };
 		3722A5B321F6935F00F5F353 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3722A5B221F6935F00F5F353 /* ViewController.swift */; };
 		3722A5B621F6935F00F5F353 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3722A5B421F6935F00F5F353 /* Main.storyboard */; };
@@ -15,8 +14,6 @@
 		3722A5BB21F6936100F5F353 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3722A5B921F6936100F5F353 /* LaunchScreen.storyboard */; };
 		3722A5C621F6936200F5F353 /* PortableEarTrainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3722A5C521F6936200F5F353 /* PortableEarTrainerTests.swift */; };
 		3722A5D121F6936200F5F353 /* PortableEarTrainerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3722A5D021F6936200F5F353 /* PortableEarTrainerUITests.swift */; };
-		64AD22A5CF50F5215B99E7F5 /* Pods_PortableEarTrainerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58E46EC1083427E79876FAB1 /* Pods_PortableEarTrainerTests.framework */; };
-		E29BE44C1EF3AEB05A0FACC3 /* Pods_PortableEarTrainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA52D4F95FCA07F346D0D89A /* Pods_PortableEarTrainer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,13 +49,10 @@
 		3722A5D221F6936200F5F353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		406DF8EE6B4D36F4BB408F3B /* Pods-PortableEarTrainerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainerUITests/Pods-PortableEarTrainerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		52F30E8A7DC4820BFB76B22E /* Pods-PortableEarTrainer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainer.release.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainer/Pods-PortableEarTrainer.release.xcconfig"; sourceTree = "<group>"; };
-		58E46EC1083427E79876FAB1 /* Pods_PortableEarTrainerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PortableEarTrainerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A11B5432C7AC78F14189635B /* Pods-PortableEarTrainerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainerTests/Pods-PortableEarTrainerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		AA52D4F95FCA07F346D0D89A /* Pods_PortableEarTrainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PortableEarTrainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC2100B5FE76BB72A64737C /* Pods-PortableEarTrainerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainerTests/Pods-PortableEarTrainerTests.release.xcconfig"; sourceTree = "<group>"; };
 		CA08962F73FA69309809EA6F /* Pods-PortableEarTrainerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainerUITests/Pods-PortableEarTrainerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF17DA1B018337DBCD3550F3 /* Pods-PortableEarTrainer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainer/Pods-PortableEarTrainer.debug.xcconfig"; sourceTree = "<group>"; };
-		DA8908BAAD0EBA8AD40598B6 /* Pods_PortableEarTrainerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PortableEarTrainerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +60,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E29BE44C1EF3AEB05A0FACC3 /* Pods_PortableEarTrainer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +67,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64AD22A5CF50F5215B99E7F5 /* Pods_PortableEarTrainerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +74,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B987D785607526A54BCD554 /* Pods_PortableEarTrainerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,9 +136,6 @@
 		7CE883397FA626D2AFA1D7B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AA52D4F95FCA07F346D0D89A /* Pods_PortableEarTrainer.framework */,
-				58E46EC1083427E79876FAB1 /* Pods_PortableEarTrainerTests.framework */,
-				DA8908BAAD0EBA8AD40598B6 /* Pods_PortableEarTrainerUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
