@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3722A5B121F6935F00F5F353 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3722A5B021F6935F00F5F353 /* AppDelegate.swift */; };
-		3722A5B321F6935F00F5F353 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3722A5B221F6935F00F5F353 /* ViewController.swift */; };
 		3722A5B621F6935F00F5F353 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3722A5B421F6935F00F5F353 /* Main.storyboard */; };
 		3722A5B821F6936100F5F353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3722A5B721F6936100F5F353 /* Assets.xcassets */; };
 		3722A5BB21F6936100F5F353 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3722A5B921F6936100F5F353 /* LaunchScreen.storyboard */; };
 		3722A5C621F6936200F5F353 /* PortableEarTrainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3722A5C521F6936200F5F353 /* PortableEarTrainerTests.swift */; };
 		3722A5D121F6936200F5F353 /* PortableEarTrainerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3722A5D021F6936200F5F353 /* PortableEarTrainerUITests.swift */; };
+		37E4A563225C0FA500814DFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3722A5B221F6935F00F5F353 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,12 +47,12 @@
 		3722A5CC21F6936200F5F353 /* PortableEarTrainerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PortableEarTrainerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3722A5D021F6936200F5F353 /* PortableEarTrainerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortableEarTrainerUITests.swift; sourceTree = "<group>"; };
 		3722A5D221F6936200F5F353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		406DF8EE6B4D36F4BB408F3B /* Pods-PortableEarTrainerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainerUITests/Pods-PortableEarTrainerUITests.release.xcconfig"; sourceTree = "<group>"; };
-		52F30E8A7DC4820BFB76B22E /* Pods-PortableEarTrainer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainer.release.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainer/Pods-PortableEarTrainer.release.xcconfig"; sourceTree = "<group>"; };
-		A11B5432C7AC78F14189635B /* Pods-PortableEarTrainerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainerTests/Pods-PortableEarTrainerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		BAC2100B5FE76BB72A64737C /* Pods-PortableEarTrainerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainerTests/Pods-PortableEarTrainerTests.release.xcconfig"; sourceTree = "<group>"; };
-		CA08962F73FA69309809EA6F /* Pods-PortableEarTrainerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainerUITests/Pods-PortableEarTrainerUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		CF17DA1B018337DBCD3550F3 /* Pods-PortableEarTrainer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainer/Pods-PortableEarTrainer.debug.xcconfig"; sourceTree = "<group>"; };
+		8E9E6454EFD7B82E4E2B071A /* Pods-PortableEarTrainerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainerUITests/Pods-PortableEarTrainerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A1A842310A76E77508BACCA9 /* Pods-PortableEarTrainerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainerTests/Pods-PortableEarTrainerTests.release.xcconfig"; sourceTree = "<group>"; };
+		AFAA205ABC4714902133F722 /* Pods-PortableEarTrainerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainerUITests/Pods-PortableEarTrainerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CF0F0502E8D7A9CD3294674F /* Pods-PortableEarTrainerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainerTests/Pods-PortableEarTrainerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DA685D15A539EF0930E2284E /* Pods-PortableEarTrainer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainer.release.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainer/Pods-PortableEarTrainer.release.xcconfig"; sourceTree = "<group>"; };
+		E7FA0B0F56F83D5089DC87A0 /* Pods-PortableEarTrainer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainer/Pods-PortableEarTrainer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,12 +143,12 @@
 		BA2652AAC4B22F1E2B68BB2F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CF17DA1B018337DBCD3550F3 /* Pods-PortableEarTrainer.debug.xcconfig */,
-				52F30E8A7DC4820BFB76B22E /* Pods-PortableEarTrainer.release.xcconfig */,
-				A11B5432C7AC78F14189635B /* Pods-PortableEarTrainerTests.debug.xcconfig */,
-				BAC2100B5FE76BB72A64737C /* Pods-PortableEarTrainerTests.release.xcconfig */,
-				CA08962F73FA69309809EA6F /* Pods-PortableEarTrainerUITests.debug.xcconfig */,
-				406DF8EE6B4D36F4BB408F3B /* Pods-PortableEarTrainerUITests.release.xcconfig */,
+				E7FA0B0F56F83D5089DC87A0 /* Pods-PortableEarTrainer.debug.xcconfig */,
+				DA685D15A539EF0930E2284E /* Pods-PortableEarTrainer.release.xcconfig */,
+				CF0F0502E8D7A9CD3294674F /* Pods-PortableEarTrainerTests.debug.xcconfig */,
+				A1A842310A76E77508BACCA9 /* Pods-PortableEarTrainerTests.release.xcconfig */,
+				AFAA205ABC4714902133F722 /* Pods-PortableEarTrainerUITests.debug.xcconfig */,
+				8E9E6454EFD7B82E4E2B071A /* Pods-PortableEarTrainerUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -356,7 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3722A5B321F6935F00F5F353 /* ViewController.swift in Sources */,
+				37E4A563225C0FA500814DFF /* ViewController.swift in Sources */,
 				3722A5B121F6935F00F5F353 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,7 +532,7 @@
 		};
 		3722A5D621F6936200F5F353 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF17DA1B018337DBCD3550F3 /* Pods-PortableEarTrainer.debug.xcconfig */;
+			baseConfigurationReference = E7FA0B0F56F83D5089DC87A0 /* Pods-PortableEarTrainer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -551,7 +551,7 @@
 		};
 		3722A5D721F6936200F5F353 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52F30E8A7DC4820BFB76B22E /* Pods-PortableEarTrainer.release.xcconfig */;
+			baseConfigurationReference = DA685D15A539EF0930E2284E /* Pods-PortableEarTrainer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -570,7 +570,7 @@
 		};
 		3722A5D921F6936200F5F353 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A11B5432C7AC78F14189635B /* Pods-PortableEarTrainerTests.debug.xcconfig */;
+			baseConfigurationReference = CF0F0502E8D7A9CD3294674F /* Pods-PortableEarTrainerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -591,7 +591,7 @@
 		};
 		3722A5DA21F6936200F5F353 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BAC2100B5FE76BB72A64737C /* Pods-PortableEarTrainerTests.release.xcconfig */;
+			baseConfigurationReference = A1A842310A76E77508BACCA9 /* Pods-PortableEarTrainerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -612,7 +612,7 @@
 		};
 		3722A5DC21F6936200F5F353 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CA08962F73FA69309809EA6F /* Pods-PortableEarTrainerUITests.debug.xcconfig */;
+			baseConfigurationReference = AFAA205ABC4714902133F722 /* Pods-PortableEarTrainerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -632,7 +632,7 @@
 		};
 		3722A5DD21F6936200F5F353 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 406DF8EE6B4D36F4BB408F3B /* Pods-PortableEarTrainerUITests.release.xcconfig */;
+			baseConfigurationReference = 8E9E6454EFD7B82E4E2B071A /* Pods-PortableEarTrainerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
