@@ -64,14 +64,15 @@ class Major145Player {
                 self.playChord(MajorScale.I)
             } else if (self.iteration == 5) {
                 self.stopChord(MajorScale.I)
+            } else if (self.iteration == 6) {
                 self.bank.play(noteNumber: self.targetNote, velocity: 80)
-            } else if ( self.iteration == 7) {
+            } else if ( self.iteration == 8) {
                 self.bank.stop(noteNumber: self.targetNote)
             }
             
             self.iteration += 1;
             
-            if (self.iteration > 7) {
+            if (self.iteration > 8) {
                 do {
                     try self.stopSequence();
                 } catch {

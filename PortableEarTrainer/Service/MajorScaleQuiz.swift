@@ -20,7 +20,7 @@ class MajorScaleQuiz {
     }
     
     private func pickRandomKey() -> MIDINoteNumber {
-        return MIDINoteNumber(random(in: 60...72));
+        return MIDINoteNumber(random(in: 48...60));
     }
     
     private func pickRandomScaleDegree(keyStart : MIDINoteNumber) -> MIDINoteNumber {
