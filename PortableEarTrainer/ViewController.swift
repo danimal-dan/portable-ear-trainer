@@ -15,19 +15,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var PlayButton: UIButton!
     @IBOutlet weak var StopButton: UIButton!
     var major145Player : Major145Player = Major145Player()
+    private(set) var isPlaying : Bool = false {
+        didSet {
+            PlayButton.isEnabled = !isPlaying;
+            StopButton.isEnabled = isPlaying;
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        StopButton.isEnabled = false;
-        PlayButton.isEnabled = true;
+        StopButton.setTitleColor(UIColor.gray, for: .disabled);
+        PlayButton.setTitleColor(UIColor.gray, for: .disabled);
+        self.isPlaying = false;
     }
     
     @IBAction func playButtonClicked(_ sender: Any) {
         do {
             print("play button tapped");
             try self.major145Player.playSequence(startNote: MIDINoteNumber(60));
-            PlayButton.isEnabled = false;
-            StopButton.isEnabled = true;
+            self.isPlaying = true;
         } catch {
             print("play error");
         }
@@ -37,8 +43,7 @@ class ViewController: UIViewController {
         do {
             print("stop button tapped");
             try self.major145Player.stopSequence();
-            PlayButton.isEnabled = true;
-            StopButton.isEnabled = false;
+            self.isPlaying = false;
         } catch {
             print("stop error");
         }
