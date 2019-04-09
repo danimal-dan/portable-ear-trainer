@@ -12,18 +12,39 @@ import AudioKit
 class ViewController: UIViewController {
     static let PLAY_RATE = 1.0
     static let MAJOR_SCALE = [0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24]
+    @IBOutlet weak var PlayButton: UIButton!
+    @IBOutlet weak var StopButton: UIButton!
+    var major145Player : Major145Player = Major145Player()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-//        executeSample()
+        StopButton.isEnabled = false;
+        PlayButton.isEnabled = true;
+    }
+    
+    @IBAction func playButtonClicked(_ sender: Any) {
         do {
-            try play145()
+            print("play button tapped");
+            try self.major145Player.playSequence(startNote: MIDINoteNumber(60));
+            PlayButton.isEnabled = false;
+            StopButton.isEnabled = true;
         } catch {
-            print("whatever")
+            print("play error");
         }
     }
 
+    @IBAction func stopButtonClicked(_ sender: Any) {
+        do {
+            print("stop button tapped");
+            try self.major145Player.stopSequence();
+            PlayButton.isEnabled = true;
+            StopButton.isEnabled = false;
+        } catch {
+            print("stop error");
+        }
+    }
+    
+    // TODO: move to test, can I even test audio output
     func executeSample() {
         let instr = AKRhodesPiano()
         let delay = AKDelay(instr)
@@ -55,6 +76,7 @@ class ViewController: UIViewController {
         performance.start()
     }
     
+    // TODO: move to test
     func playCMajor() throws {
         let bank = AKOscillatorBank(waveform: AKTable(.sine),
                                     attackDuration: 0.1,
@@ -72,6 +94,7 @@ class ViewController: UIViewController {
         bank.play(noteNumber: G, velocity: 80);
     }
     
+    // TODO: move to test
     func play145() throws {
         let bank = AKOscillatorBank(waveform: AKTable(.sine),
                                     attackDuration: 0.1,
