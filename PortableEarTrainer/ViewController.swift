@@ -10,14 +10,18 @@ import UIKit
 import AudioKit
 
 class ViewController: UIViewController {
-    static let PLAY_RATE = 2.0
-    static let MAJOR_SCALE = [0, 2, 4, 5, 7, 9, 11, 12]
+    static let PLAY_RATE = 1.0
+    static let MAJOR_SCALE = [0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-//        executeSequence()
-        pulseCMajor()
+//        executeSample()
+        do {
+            try play145()
+        } catch {
+            print("whatever")
+        }
     }
 
     func executeSample() {
@@ -44,7 +48,6 @@ class ViewController: UIViewController {
         
         AudioKit.output = reverb
         do {
-            
             try AudioKit.start(withPeriodicFunctions: performance)
         } catch {
             print ("could not start audio")
@@ -52,30 +55,76 @@ class ViewController: UIViewController {
         performance.start()
     }
     
-    func pulseCMajor() {
-        let instr = AKRhodesPiano()
-        let instr2 = AKRhodesPiano()
-        let instr3 = AKRhodesPiano()
+    func playCMajor() throws {
+        let bank = AKOscillatorBank(waveform: AKTable(.sine),
+                                    attackDuration: 0.1,
+                                    releaseDuration: 0.1)
         
-        let C = (ViewController.MAJOR_SCALE[0] + 48).midiNoteToFrequency()
-        let E = (ViewController.MAJOR_SCALE[2] + 48).midiNoteToFrequency()
-        let G = (ViewController.MAJOR_SCALE[4] + 48).midiNoteToFrequency()
+        AudioKit.output = bank
+        try AudioKit.start()
         
+        let C = MIDINoteNumber.init(ViewController.MAJOR_SCALE[0] + 60);
+        let E = MIDINoteNumber.init(ViewController.MAJOR_SCALE[2] + 60);
+        let G = MIDINoteNumber.init(ViewController.MAJOR_SCALE[4] + 60);
+        
+        bank.play(noteNumber: C, velocity: 80);
+        bank.play(noteNumber: E, velocity: 80);
+        bank.play(noteNumber: G, velocity: 80);
+    }
+    
+    func play145() throws {
+        let bank = AKOscillatorBank(waveform: AKTable(.sine),
+                                    attackDuration: 0.1,
+                                    releaseDuration: 0.1)
+        
+        AudioKit.output = bank
+        
+        let C = 0;
+        let F = 3;
+        let G = 4;
+        
+        var count = 0;
         let performance = AKPeriodicFunction(frequency: ViewController.PLAY_RATE) {
-            instr.trigger(frequency: C)
-            instr2.trigger(frequency: E)
-            instr3.trigger(frequency: G)
+            print(count)
+            if (count == 0) {
+                self.playMajorChord(rootDegree: C, bank: bank)
+            } else if ( count == 1) {
+                self.stopMajorChord(rootDegree: C, bank: bank)
+                self.playMajorChord(rootDegree: F, bank: bank)
+            } else if (count == 2) {
+                self.stopMajorChord(rootDegree: F, bank: bank)
+                self.playMajorChord(rootDegree: G, bank: bank)
+            } else if (count == 3) {
+                self.stopMajorChord(rootDegree: G, bank: bank)
+                self.playMajorChord(rootDegree: C, bank: bank)
+            } else if (count == 6) {
+                self.stopMajorChord(rootDegree: C, bank: bank)
+                count = -1;
+            }
+            
+            count += 1;
         }
         
-        let mixer = AKMixer(instr, instr2)
-        AudioKit.output = mixer
+        try AudioKit.start(withPeriodicFunctions: performance)
         
-        do {
-            try AudioKit.start(withPeriodicFunctions: performance)
-        } catch {
-            print ("could not start audio")
-        }
-        performance.start()
+        performance.start();
+    }
+    
+    func playMajorChord(rootDegree : Int, bank : AKOscillatorBank) {
+        bank.play(noteNumber: getMidiNoteNumber(rootDegree: rootDegree), velocity: 80);
+        bank.play(noteNumber: getMidiNoteNumber(rootDegree: rootDegree + 2), velocity: 80);
+        bank.play(noteNumber: getMidiNoteNumber(rootDegree: rootDegree + 4), velocity: 80);
+    }
+    
+    func stopMajorChord(rootDegree : Int, bank : AKOscillatorBank) {
+        bank.stop(noteNumber: getMidiNoteNumber(rootDegree: rootDegree));
+        bank.stop(noteNumber: getMidiNoteNumber(rootDegree: rootDegree + 2));
+        bank.stop(noteNumber: getMidiNoteNumber(rootDegree: rootDegree + 4));
+    }
+    
+    func getMidiNoteNumber(rootDegree : Int, octave : Int = 5) -> MIDINoteNumber {
+        let octaveStart = octave * 12;
+        return MIDINoteNumber(ViewController.MAJOR_SCALE[rootDegree] + octaveStart)
     }
 }
 
