@@ -14,20 +14,23 @@ class Major145Player {
     private var performance : AKPeriodicFunction?;
     private var iteration : Int = 0;
     private var startNote : MIDINoteNumber = MIDINoteNumber(60);
-    
-    static let I : [Int] = [0, 4, 7, 12];
-    static let IV : [Int] = [0, 5, 9, 12];
-    static let V : [Int] = [2, 7, 11, 14];
+    private var targetNote : MIDINoteNumber = MIDINoteNumber(60);
     
     init() {
         bank = AKOscillatorBank(waveform: AKTable(.sine),
-                                attackDuration: 0.1,
+                                attackDuration: 0.01,
+                                decayDuration: 0.2,
+                                sustainLevel: 0.1,
                                 releaseDuration: 0.1);
     }
     
-    func playSequence(startNote : MIDINoteNumber) throws {
-        self.startNote = startNote;
-        
+    func playSequence(keyStartNote : MIDINoteNumber, targetNote : MIDINoteNumber) throws {
+        guard self.performance == nil || self.performance?.isPlaying == false else {
+            print("performance is already playing")
+            return;
+        }
+        self.startNote = keyStartNote;
+        self.targetNote = targetNote;
         initPerformance();
         
         if let performance = self.performance {
@@ -49,24 +52,31 @@ class Major145Player {
         self.performance = AKPeriodicFunction(frequency: ViewController.PLAY_RATE) {
             print("Performation iteration: ", self.iteration);
             if (self.iteration == 0) {
-                self.playChord(Major145Player.I)
+                self.playChord(MajorScale.I)
             } else if (self.iteration == 1) {
-                self.stopChord(Major145Player.I)
-                self.playChord(Major145Player.IV)
+                self.stopChord(MajorScale.I)
+                self.playChord(MajorScale.IV)
             } else if (self.iteration == 2) {
-                self.stopChord(Major145Player.IV)
-                self.playChord(Major145Player.V)
+                self.stopChord(MajorScale.IV)
+                self.playChord(MajorScale.V)
             } else if (self.iteration == 3) {
-                self.stopChord(Major145Player.V)
-                self.playChord(Major145Player.I)
+                self.stopChord(MajorScale.V)
+                self.playChord(MajorScale.I)
             } else if (self.iteration == 5) {
-                self.stopChord(Major145Player.I)
+                self.stopChord(MajorScale.I)
+                self.bank.play(noteNumber: self.targetNote, velocity: 80)
+            } else if ( self.iteration == 7) {
+                self.bank.stop(noteNumber: self.targetNote)
             }
             
             self.iteration += 1;
             
-            if (self.iteration > 5) {
-                self.iteration = 0;
+            if (self.iteration > 7) {
+                do {
+                    try self.stopSequence();
+                } catch {
+                    print("could not stop sequence, uh oh");
+                }
             }
         }
     }

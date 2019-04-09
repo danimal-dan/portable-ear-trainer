@@ -13,39 +13,19 @@ class ViewController: UIViewController {
     static let PLAY_RATE = 1.0
     static let MAJOR_SCALE = [0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24]
     @IBOutlet weak var PlayButton: UIButton!
-    @IBOutlet weak var StopButton: UIButton!
-    var major145Player : Major145Player = Major145Player()
-    private(set) var isPlaying : Bool = false {
-        didSet {
-            PlayButton.isEnabled = !isPlaying;
-            StopButton.isEnabled = isPlaying;
-        }
-    }
+    var majorScaleQuiz : MajorScaleQuiz = MajorScaleQuiz()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        StopButton.setTitleColor(UIColor.gray, for: .disabled);
-        PlayButton.setTitleColor(UIColor.gray, for: .disabled);
-        self.isPlaying = false;
+        PlayButton.isEnabled = true;
     }
     
     @IBAction func playButtonClicked(_ sender: Any) {
         do {
             print("play button tapped");
-            try self.major145Player.playSequence(startNote: MIDINoteNumber(60));
-            self.isPlaying = true;
+            try self.majorScaleQuiz.playSample();
         } catch {
             print("play error");
-        }
-    }
-
-    @IBAction func stopButtonClicked(_ sender: Any) {
-        do {
-            print("stop button tapped");
-            try self.major145Player.stopSequence();
-            self.isPlaying = false;
-        } catch {
-            print("stop error");
         }
     }
     
@@ -69,6 +49,8 @@ class ViewController: UIViewController {
             
             if random(in: 0...6) > 1.0 {
                 instr.trigger(frequency: frequency)
+                instr.trigger(frequency: frequency + 5)
+                instr.trigger(frequency: frequency + 10)
             }
         }
         
