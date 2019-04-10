@@ -17,11 +17,11 @@ class Major145Player {
     private var targetNote : MIDINoteNumber = MIDINoteNumber(60);
     
     init() {
-        bank = AKOscillatorBank(waveform: AKTable(.sine),
-                                attackDuration: 0.01,
-                                decayDuration: 0.2,
+        bank = AKOscillatorBank(waveform: AKTable(.triangle),
+                                attackDuration: 0.001,
+                                decayDuration: 0.3,
                                 sustainLevel: 0.1,
-                                releaseDuration: 0.1);
+                                releaseDuration: 0.2);
     }
     
     func playSequence(keyStartNote : MIDINoteNumber, targetNote : MIDINoteNumber) throws {
@@ -49,7 +49,7 @@ class Major145Player {
     }
     
     private func initPerformance() {
-        self.performance = AKPeriodicFunction(frequency: ViewController.PLAY_RATE) {
+        self.performance = AKPeriodicFunction(frequency: 1.0) {
             print("Performation iteration: ", self.iteration);
             if (self.iteration == 0) {
                 self.playChord(MajorScale.I)
