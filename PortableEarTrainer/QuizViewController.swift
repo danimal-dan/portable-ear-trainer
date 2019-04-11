@@ -1,15 +1,14 @@
 //
-//  ViewController.swift
+//  QuizViewController.swift
 //  PortableEarTrainer
 //
-//  Created by Daniel Collins on 1/21/19.
+//  Created by Daniel Collins on 4/10/19.
 //  Copyright © 2019 Daniel Collins. All rights reserved.
 //
 
 import UIKit
-import AudioKit
 
-class ViewController: UIViewController {
+class QuizViewController: UIViewController {
     @IBOutlet weak var PlayButton: UIButton!
     var majorScaleQuiz : MajorScaleQuiz = MajorScaleQuiz()
     
@@ -18,7 +17,7 @@ class ViewController: UIViewController {
         PlayButton.isEnabled = true;
     }
     
-    @IBAction func playButtonClicked(_ sender: Any) {
+    @IBAction func onPlayButtonTap(_ sender: Any) {
         do {
             print("play button tapped");
             try self.majorScaleQuiz.playSample();
@@ -26,5 +25,12 @@ class ViewController: UIViewController {
             print("play error");
         }
     }
-}
 
+    @IBAction func onAnswerSelect(_ sender: Any) {
+        guard let button = sender as? UIButton else {
+            return
+        }
+        
+        print("scale degree selected: ", button.tag)
+    }
+}
