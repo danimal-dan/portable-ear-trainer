@@ -36,10 +36,20 @@ class QuizViewController: UIViewController {
         
         let isCorrect = majorScaleQuiz.verifyAnswer(selectedScaleDegree);
         
-        if (isCorrect) {
-            print("CORRECT")
-        } else {
-            print("WRONG")
+        print(isCorrect ? "CORRECT" : "WRONG");
+        playAnswerResponseAnimation(isCorrect);
+    }
+    
+    func playAnswerResponseAnimation(_ isCorrect : Bool) {
+        let originalColor = self.view.backgroundColor ?? nil;
+        let responseColor : UIColor = isCorrect ? UIColor.green : UIColor.red;
+        UIView.animate(withDuration: 0.4, animations: {
+            self.view.backgroundColor = responseColor;
+        }) {
+            (_: Bool) in
+            UIView.animate(withDuration: 0.1, animations: {
+                self.view.backgroundColor = originalColor;
+            })
         }
     }
 }
