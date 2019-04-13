@@ -49,7 +49,7 @@ class Major145Player {
     }
     
     private func initPerformance() {
-        self.performance = AKPeriodicFunction(frequency: 1.0) {
+        self.performance = AKPeriodicFunction(frequency: 1.5) {
             print("Performation iteration: ", self.iteration);
             if (self.iteration == 0) {
                 self.playChord(MajorScale.I)

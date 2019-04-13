@@ -18,6 +18,6 @@ final class MajorScale {
         assert(degree > 0);
         let octaveOffset : Int = Int(floor(Double(degree) / Double(SCALE.count)) * 12);
         
-        return SCALE[degree - 1 % SCALE.count - 1] + octaveOffset;
+        return SCALE[(degree - 1) % (SCALE.count - 1)] + octaveOffset;
     }
 }
