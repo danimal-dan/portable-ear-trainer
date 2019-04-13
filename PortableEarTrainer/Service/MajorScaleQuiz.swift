@@ -11,21 +11,26 @@ import AudioKit
 
 class MajorScaleQuiz {
     let major145Player : Major145Player = Major145Player()
+    var key : MIDINoteNumber;
+    var targetScaleDegree: Int;
+    
+    init() {
+        key = MIDINoteNumber(random(in: 48...60));
+        targetScaleDegree = Int(random(in: 1...7));
+    }
     
     func playSample() throws {
-        let key = pickRandomKey();
-        let target = pickRandomScaleDegree(keyStart: key)
+        let target = getTargetNoteNumber(keyStart: key)
         print("KEY/TARGET", key, target);
         try major145Player.playSequence(keyStartNote: key, targetNote: target)
     }
     
-    private func pickRandomKey() -> MIDINoteNumber {
-        return MIDINoteNumber(random(in: 48...60));
+    func verifyAnswer(_ scaleDegree : Int) -> Bool {
+        return scaleDegree == targetScaleDegree;
     }
     
-    private func pickRandomScaleDegree(keyStart : MIDINoteNumber) -> MIDINoteNumber {
-        let scaleDegree = Int(random(in: 1...7));
-        let scaleOffset = UInt8(MajorScale.getScaleDegree(scaleDegree));
+    private func getTargetNoteNumber(keyStart : MIDINoteNumber) -> MIDINoteNumber {
+        let scaleOffset = UInt8(MajorScale.getScaleDegree(targetScaleDegree));
         
         return keyStart + scaleOffset;
     }

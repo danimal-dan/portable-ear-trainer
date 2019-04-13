@@ -31,6 +31,15 @@ class QuizViewController: UIViewController {
             return
         }
         
-        print("scale degree selected: ", button.tag)
+        let selectedScaleDegree = Int(button.tag);
+        print("scale degree selected: ", selectedScaleDegree);
+        
+        let isCorrect = majorScaleQuiz.verifyAnswer(selectedScaleDegree);
+        
+        if (isCorrect) {
+            print("CORRECT")
+        } else {
+            print("WRONG")
+        }
     }
 }
