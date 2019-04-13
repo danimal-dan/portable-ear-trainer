@@ -199,6 +199,8 @@
                         <viewLayoutGuide key="safeArea" id="eAe-sd-4in"/>
                     </view>
                     <connections>
+                        <outlet property="CurrentPositionLabel" destination="Kal-d7-uNN" id="xkO-sZ-5dQ"/>
+                        <outlet property="CurrentScoreLabel" destination="yk1-yO-u3W" id="Z5B-3L-H38"/>
                         <outlet property="PlayButton" destination="Abd-XB-xtU" id="Gla-Nz-g10"/>
                     </connections>
                 </viewController>

@@ -8,22 +8,21 @@
 
 import UIKit
 
-class QuizViewController: UIViewController {
+class QuizViewController: UIViewController, QuizDelegate {
     @IBOutlet weak var PlayButton: UIButton!
+    @IBOutlet weak var CurrentPositionLabel: UILabel!
+    @IBOutlet weak var CurrentScoreLabel: UILabel!
+    
     var majorScaleQuiz : MajorScaleQuiz = MajorScaleQuiz()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.majorScaleQuiz.delegate = self;
         PlayButton.isEnabled = true;
     }
     
     @IBAction func onPlayButtonTap(_ sender: Any) {
-        do {
-            print("play button tapped");
-            try self.majorScaleQuiz.playSample();
-        } catch {
-            print("play error");
-        }
+        self.majorScaleQuiz.playQuestionSample();
     }
 
     @IBAction func onAnswerSelect(_ sender: Any) {
@@ -34,7 +33,7 @@ class QuizViewController: UIViewController {
         let selectedScaleDegree = Int(button.tag);
         print("scale degree selected: ", selectedScaleDegree);
         
-        let isCorrect = majorScaleQuiz.verifyAnswer(selectedScaleDegree);
+        let isCorrect = self.majorScaleQuiz.answerQuestion(selectedScaleDegree);
         
         print(isCorrect ? "CORRECT" : "WRONG");
         playAnswerResponseAnimation(isCorrect);
@@ -51,5 +50,21 @@ class QuizViewController: UIViewController {
                 self.view.backgroundColor = originalColor;
             })
         }
+    }
+    
+    func currentQuestionDidChange(currentQuestion: MajorScaleQuestion, index: Int) {
+        self.CurrentPositionLabel.text = "Question \(index + 1) of \(self.majorScaleQuiz.getTotalQuestions())";
+    }
+    
+    func answerCollectionDidChange(answerCollection: [Bool]) {
+        let numberCorrect = answerCollection.filter({
+            (isCorrect) -> Bool in
+            return isCorrect == true;
+        }).count;
+        let totalAnswers = answerCollection.count;
+        
+        let percentage = round((Double(numberCorrect) / Double(totalAnswers)) * 100);
+        
+        self.CurrentScoreLabel.text = "Score: \(percentage)% (\(numberCorrect) of \(totalAnswers))";
     }
 }

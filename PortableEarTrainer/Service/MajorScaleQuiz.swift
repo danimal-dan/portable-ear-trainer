@@ -1,37 +1,72 @@
 //
-//  MajorScaleTest.swift
+//  MajorScaleQuiz.swift
 //  PortableEarTrainer
 //
-//  Created by Daniel Collins on 4/9/19.
+//  Created by Daniel Collins on 4/13/19.
 //  Copyright © 2019 Daniel Collins. All rights reserved.
 //
 
 import Foundation
-import AudioKit
+
+protocol QuizDelegate : AnyObject {
+    func currentQuestionDidChange(currentQuestion : MajorScaleQuestion, index : Int);
+    
+    func answerCollectionDidChange(answerCollection : [Bool]);
+}
 
 class MajorScaleQuiz {
-    let major145Player : Major145Player = Major145Player()
-    var key : MIDINoteNumber;
-    var targetScaleDegree: Int;
+    private var numberOfQuestions = 20;
+    private var questions : [MajorScaleQuestion] = [];
+    private var answerResults : [Bool] = [];
+    private var currentPosition : Int = 0;
+    weak var delegate : QuizDelegate?
     
-    init() {
-        key = MIDINoteNumber(random(in: 48...60));
-        targetScaleDegree = Int(random(in: 1...8));
+    init(_ numberOfQuestions : Int = 20) {
+        self.numberOfQuestions = numberOfQuestions;
+        self.generateQuestions();
     }
     
-    func playSample() throws {
-        let target = getTargetNoteNumber(keyStart: key)
-        print("KEY/TARGET", key, target);
-        try major145Player.playSequence(keyStartNote: key, targetNote: target)
-    }
-    
-    func verifyAnswer(_ scaleDegree : Int) -> Bool {
-        return scaleDegree == targetScaleDegree;
-    }
-    
-    private func getTargetNoteNumber(keyStart : MIDINoteNumber) -> MIDINoteNumber {
-        let scaleOffset = UInt8(MajorScale.getScaleDegree(targetScaleDegree));
+    private func generateQuestions() {
+        var questionList : [MajorScaleQuestion] = [];
+        for _ in (0...numberOfQuestions) {
+            questionList.append(MajorScaleQuestion())
+        }
         
-        return keyStart + scaleOffset;
+        self.questions = questionList;
+    }
+    
+    public func getCurrentQuestion() -> MajorScaleQuestion {
+        return questions[currentPosition];
+    }
+    
+    public func getNextQuestion() -> MajorScaleQuestion {
+        self.currentPosition += 1;
+        delegate?.currentQuestionDidChange(currentQuestion: self.getCurrentQuestion(), index: self.currentPosition);
+        return self.getCurrentQuestion();
+    }
+    
+    public func playQuestionSample() {
+        do {
+            print("playing current question");
+            try self.getCurrentQuestion().playSample();
+        } catch {
+            print("play error");
+        }
+    }
+    
+    public func answerQuestion(_ scaleDegree : Int) -> Bool {
+        let question : MajorScaleQuestion = self.getCurrentQuestion();
+        let isCorrect = question.verifyAnswer(scaleDegree);
+        answerResults.append(isCorrect);
+        
+        delegate?.answerCollectionDidChange(answerCollection: answerResults);
+        
+        _ = self.getNextQuestion();
+        
+        return isCorrect;
+    }
+    
+    public func getTotalQuestions() -> Int {
+        return self.numberOfQuestions;
     }
 }
