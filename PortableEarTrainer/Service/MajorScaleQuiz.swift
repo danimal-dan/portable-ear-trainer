@@ -16,7 +16,7 @@ class MajorScaleQuiz {
     
     init() {
         key = MIDINoteNumber(random(in: 48...60));
-        targetScaleDegree = Int(random(in: 1...7));
+        targetScaleDegree = Int(random(in: 1...8));
     }
     
     func playSample() throws {
