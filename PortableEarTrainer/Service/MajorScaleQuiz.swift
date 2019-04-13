@@ -18,7 +18,7 @@ class MajorScaleQuiz {
     private var numberOfQuestions = 20;
     private var questions : [MajorScaleQuestion] = [];
     private var answerResults : [Bool] = [];
-    private var currentPosition : Int = 0;
+    private var currentPosition : Int = -1;
     weak var delegate : QuizDelegate?
     
     init(_ numberOfQuestions : Int = 20) {
@@ -39,10 +39,14 @@ class MajorScaleQuiz {
         return questions[currentPosition];
     }
     
-    public func getNextQuestion() -> MajorScaleQuestion {
+    public func startQuiz() {
+        self.loadNextQuestion();
+        delegate?.answerCollectionDidChange(answerCollection: answerResults);
+    }
+    
+    public func loadNextQuestion() {
         self.currentPosition += 1;
         delegate?.currentQuestionDidChange(currentQuestion: self.getCurrentQuestion(), index: self.currentPosition);
-        return self.getCurrentQuestion();
     }
     
     public func playQuestionSample() {
@@ -60,8 +64,6 @@ class MajorScaleQuiz {
         answerResults.append(isCorrect);
         
         delegate?.answerCollectionDidChange(answerCollection: answerResults);
-        
-        _ = self.getNextQuestion();
         
         return isCorrect;
     }
