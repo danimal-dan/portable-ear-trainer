@@ -46,6 +46,17 @@
                                     <segue destination="l4X-zr-O0A" kind="show" id="MYM-VN-SA4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTb-ep-d27">
+                                <rect key="frame" x="10" y="421" width="394" height="40"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dF6-Ln-fgw"/>
+                                </constraints>
+                                <state key="normal" title="Test Voice Recognition"/>
+                                <connections>
+                                    <segue destination="YO7-f3-MCg" kind="show" id="f5i-jR-u8j"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -53,10 +64,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gid-vA-n00" secondAttribute="trailing" constant="10" id="0yw-ju-FUh"/>
                             <constraint firstItem="Gid-vA-n00" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="4MI-XX-8Zw"/>
                             <constraint firstItem="nLv-Kf-jC4" firstAttribute="top" secondItem="Ogd-2x-Mgs" secondAttribute="bottom" constant="79" id="5JD-IZ-eq1"/>
+                            <constraint firstItem="KTb-ep-d27" firstAttribute="top" secondItem="Gid-vA-n00" secondAttribute="bottom" constant="10" id="69P-xd-zD1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="Ogd-2x-Mgs" secondAttribute="bottom" constant="-198" id="AR8-OZ-ddn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nLv-Kf-jC4" secondAttribute="trailing" constant="10" id="Ggd-kx-Xcn"/>
+                            <constraint firstItem="KTb-ep-d27" firstAttribute="top" secondItem="Gid-vA-n00" secondAttribute="bottom" constant="10" id="QlO-Hb-boG"/>
                             <constraint firstItem="Ogd-2x-Mgs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="R0D-n6-LcW"/>
                             <constraint firstItem="Gid-vA-n00" firstAttribute="top" secondItem="nLv-Kf-jC4" secondAttribute="bottom" constant="10" id="VWI-jP-O16"/>
+                            <constraint firstItem="KTb-ep-d27" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="XN9-Oe-61E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KTb-ep-d27" secondAttribute="trailing" constant="10" id="Yx0-RD-sSk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ogd-2x-Mgs" secondAttribute="trailing" constant="10" id="yTw-Kf-qzg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -234,6 +249,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="juV-4Z-ccC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="841" y="814"/>
+        </scene>
+        <!--Voice Recognition Test View Controller-->
+        <scene sceneID="5Of-gN-E2e">
+            <objects>
+                <viewController id="YO7-f3-MCg" customClass="VoiceRecognitionTestViewController" customModule="PortableEarTrainer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vk5-e8-C9w">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mE0-89-UTB">
+                                <rect key="frame" x="10" y="194" width="394" height="34"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Start Recording"/>
+                                <connections>
+                                    <action selector="recordButtonPressed:" destination="YO7-f3-MCg" eventType="touchUpInside" id="vXf-s7-bM0"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Transcript" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="U4a-M0-96d">
+                                <rect key="frame" x="10" y="238" width="394" height="614"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mE0-89-UTB" firstAttribute="leading" secondItem="mBZ-A9-lBP" secondAttribute="leading" constant="10" id="2wR-Nv-U2j"/>
+                            <constraint firstItem="mE0-89-UTB" firstAttribute="top" secondItem="mBZ-A9-lBP" secondAttribute="top" constant="150" id="ChM-Cl-vlC"/>
+                            <constraint firstItem="mBZ-A9-lBP" firstAttribute="trailing" secondItem="U4a-M0-96d" secondAttribute="trailing" constant="10" id="OEz-PQ-IFk"/>
+                            <constraint firstItem="mBZ-A9-lBP" firstAttribute="bottom" secondItem="U4a-M0-96d" secondAttribute="bottom" constant="10" id="TMi-EQ-ISF"/>
+                            <constraint firstItem="mBZ-A9-lBP" firstAttribute="trailing" secondItem="mE0-89-UTB" secondAttribute="trailing" constant="10" id="cbQ-ht-jNG"/>
+                            <constraint firstItem="U4a-M0-96d" firstAttribute="top" secondItem="mE0-89-UTB" secondAttribute="bottom" constant="10" id="eer-S9-rVY"/>
+                            <constraint firstItem="U4a-M0-96d" firstAttribute="leading" secondItem="mBZ-A9-lBP" secondAttribute="leading" constant="10" id="oDG-ny-sMo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mBZ-A9-lBP"/>
+                    </view>
+                    <connections>
+                        <outlet property="recordButton" destination="mE0-89-UTB" id="0rK-ao-fzM"/>
+                        <outlet property="textView" destination="U4a-M0-96d" id="nwZ-Jc-srb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xOf-52-VYb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1638" y="814"/>
         </scene>
     </scenes>
 </document>

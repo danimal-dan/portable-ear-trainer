@@ -14,6 +14,7 @@
 		3722A5BB21F6936100F5F353 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3722A5B921F6936100F5F353 /* LaunchScreen.storyboard */; };
 		3722A5C621F6936200F5F353 /* PortableEarTrainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3722A5C521F6936200F5F353 /* PortableEarTrainerTests.swift */; };
 		3722A5D121F6936200F5F353 /* PortableEarTrainerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3722A5D021F6936200F5F353 /* PortableEarTrainerUITests.swift */; };
+		374EA8822262EA1E00BC565B /* VoiceRecognitionTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374EA8812262EA1E00BC565B /* VoiceRecognitionTestViewController.swift */; };
 		37D265F72262D896003103C3 /* MicTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D265F62262D896003103C3 /* MicTestViewController.swift */; };
 		37D5750B225EE3C00042CC83 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D5750A225EE3C00042CC83 /* QuizViewController.swift */; };
 		37E4A563225C0FA500814DFF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3722A5B221F6935F00F5F353 /* HomeViewController.swift */; };
@@ -60,6 +61,7 @@
 		3722A5CC21F6936200F5F353 /* PortableEarTrainerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PortableEarTrainerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3722A5D021F6936200F5F353 /* PortableEarTrainerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortableEarTrainerUITests.swift; sourceTree = "<group>"; };
 		3722A5D221F6936200F5F353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		374EA8812262EA1E00BC565B /* VoiceRecognitionTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecognitionTestViewController.swift; sourceTree = "<group>"; };
 		37D265F62262D896003103C3 /* MicTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicTestViewController.swift; sourceTree = "<group>"; };
 		37D5750A225EE3C00042CC83 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		37E4A59F225C37B800814DFF /* Major145Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Major145Player.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				37E4A59E225C374A00814DFF /* Service */,
 				3722A5B021F6935F00F5F353 /* AppDelegate.swift */,
 				3722A5B221F6935F00F5F353 /* HomeViewController.swift */,
+				374EA8812262EA1E00BC565B /* VoiceRecognitionTestViewController.swift */,
 				3722A5B421F6935F00F5F353 /* Main.storyboard */,
 				37D265F62262D896003103C3 /* MicTestViewController.swift */,
 				37D5750A225EE3C00042CC83 /* QuizViewController.swift */,
@@ -417,6 +420,7 @@
 				37E4A5A0225C37B800814DFF /* Major145Player.swift in Sources */,
 				37E4A563225C0FA500814DFF /* HomeViewController.swift in Sources */,
 				3722A5B121F6935F00F5F353 /* AppDelegate.swift in Sources */,
+				374EA8822262EA1E00BC565B /* VoiceRecognitionTestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
