@@ -79,6 +79,7 @@ class VoiceRecognitionTestViewController: UIViewController, SFSpeechRecognizerDe
         recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
         guard let recognitionRequest = recognitionRequest else { fatalError("Unable to created a SFSpeechAudioBufferRecognitionRequest object") }
         recognitionRequest.shouldReportPartialResults = true
+        recognitionRequest.taskHint = .confirmation
         
         // Create a recognition task for the speech recognition session.
         // Keep a reference to the task so that it can be canceled.
