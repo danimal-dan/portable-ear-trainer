@@ -14,16 +14,16 @@ import AudioKit
 class NoteNameUtilTest : XCTestCase {
  
     func testNoteName() {
-        let shouldBeA = NoteName.getNoteName(MIDINoteNumber(21));
-        let shouldBeC = NoteName.getNoteName(MIDINoteNumber(60));
+        let shouldBeA = NoteName.forMIDINoteNumber(MIDINoteNumber(21));
+        let shouldBeC = NoteName.forMIDINoteNumber(MIDINoteNumber(60));
         
         XCTAssert(shouldBeA == "A")
         XCTAssert(shouldBeC == "C")
     }
     
     func testNoteNameWithOctave() {
-        let shouldBeA = NoteName.getNoteName(MIDINoteNumber(21), includeOctave: true);
-        let shouldBeC = NoteName.getNoteName(MIDINoteNumber(60), includeOctave: true);
+        let shouldBeA = NoteName.forMIDINoteNumber(MIDINoteNumber(21), includeOctave: true);
+        let shouldBeC = NoteName.forMIDINoteNumber(MIDINoteNumber(60), includeOctave: true);
         
         XCTAssert(shouldBeA == "A0")
         XCTAssert(shouldBeC == "C4")

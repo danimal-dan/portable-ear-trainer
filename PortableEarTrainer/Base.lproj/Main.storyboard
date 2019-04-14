@@ -35,14 +35,28 @@
                                     <segue destination="yVr-rz-ds0" kind="show" id="bD9-P2-CWy"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gid-vA-n00">
+                                <rect key="frame" x="10" y="371" width="394" height="40"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="awR-QS-duR"/>
+                                </constraints>
+                                <state key="normal" title="Test Mic"/>
+                                <connections>
+                                    <segue destination="l4X-zr-O0A" kind="show" id="MYM-VN-SA4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nLv-Kf-jC4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="0N0-AT-0rd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gid-vA-n00" secondAttribute="trailing" constant="10" id="0yw-ju-FUh"/>
+                            <constraint firstItem="Gid-vA-n00" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="4MI-XX-8Zw"/>
                             <constraint firstItem="nLv-Kf-jC4" firstAttribute="top" secondItem="Ogd-2x-Mgs" secondAttribute="bottom" constant="79" id="5JD-IZ-eq1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="Ogd-2x-Mgs" secondAttribute="bottom" constant="-198" id="AR8-OZ-ddn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nLv-Kf-jC4" secondAttribute="trailing" constant="10" id="Ggd-kx-Xcn"/>
                             <constraint firstItem="Ogd-2x-Mgs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="R0D-n6-LcW"/>
+                            <constraint firstItem="Gid-vA-n00" firstAttribute="top" secondItem="nLv-Kf-jC4" secondAttribute="bottom" constant="10" id="VWI-jP-O16"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ogd-2x-Mgs" secondAttribute="trailing" constant="10" id="yTw-Kf-qzg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -205,6 +219,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kfd-wt-gqw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="840.57971014492762" y="80.357142857142847"/>
+        </scene>
+        <!--Mic Test View Controller-->
+        <scene sceneID="jYC-6z-cAR">
+            <objects>
+                <viewController id="l4X-zr-O0A" customClass="MicTestViewController" customModule="PortableEarTrainer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BOg-Zj-nYk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="DM4-SK-4CO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="juV-4Z-ccC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="841" y="814"/>
         </scene>
     </scenes>
 </document>

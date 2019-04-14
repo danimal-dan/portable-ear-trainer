@@ -6,18 +6,18 @@ target 'PortableEarTrainer' do
   use_frameworks!
 
   # Pods for PortableEarTrainer
-  pod 'AudioKit/Core'
+  pod 'AudioKit'
 
   target 'PortableEarTrainerTests' do
     inherit! :search_paths
     # Pods for testing
-    pod 'AudioKit/Core'
+    pod 'AudioKit'
   end
 
   target 'PortableEarTrainerUITests' do
     inherit! :search_paths
     # Pods for testing
-    pod 'AudioKit/Core'
+    pod 'AudioKit'
   end
 
 end
