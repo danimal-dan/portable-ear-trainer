@@ -45,6 +45,11 @@ class MajorScaleQuiz {
     }
     
     public func loadNextQuestion() {
+        if (self.currentPosition > -1) {
+            // don't really like this, should handle this another way...
+            getCurrentQuestion().stopSample();
+        }
+        
         self.currentPosition += 1;
         delegate?.currentQuestionDidChange(currentQuestion: self.getCurrentQuestion(), index: self.currentPosition);
     }

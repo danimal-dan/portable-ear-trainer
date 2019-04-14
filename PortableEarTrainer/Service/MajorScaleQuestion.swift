@@ -25,6 +25,14 @@ class MajorScaleQuestion {
         try major145Player.playSequence(keyStartNote: key, targetNote: target)
     }
     
+    func stopSample() {
+        do {
+            try major145Player.stopSequence();
+        } catch {
+            print("error stopping sequence")
+        }
+    }
+    
     func verifyAnswer(_ scaleDegree : Int) -> Bool {
         return scaleDegree == targetScaleDegree;
     }
