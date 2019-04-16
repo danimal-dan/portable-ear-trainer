@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370AE11F22657F9F00C3C361 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370AE11E22657F9F00C3C361 /* Stats.swift */; };
+		370AE12122657FDE00C3C361 /* StatsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370AE12022657FDE00C3C361 /* StatsTest.swift */; };
 		3721E3FF226223C700A8E47B /* MajorScaleQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721E3FE226223C700A8E47B /* MajorScaleQuiz.swift */; };
 		3722A5B121F6935F00F5F353 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3722A5B021F6935F00F5F353 /* AppDelegate.swift */; };
 		3722A5B621F6935F00F5F353 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3722A5B421F6935F00F5F353 /* Main.storyboard */; };
@@ -47,6 +49,8 @@
 
 /* Begin PBXFileReference section */
 		148ECC6A567C5AAE0D7ABDB9 /* Pods_PortableEarTrainerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PortableEarTrainerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		370AE11E22657F9F00C3C361 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		370AE12022657FDE00C3C361 /* StatsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTest.swift; sourceTree = "<group>"; };
 		3721E3FE226223C700A8E47B /* MajorScaleQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorScaleQuiz.swift; sourceTree = "<group>"; };
 		3722A5AD21F6935F00F5F353 /* PortableEarTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PortableEarTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3722A5B021F6935F00F5F353 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 				3722A5C521F6936200F5F353 /* PortableEarTrainerTests.swift */,
 				3722A5C721F6936200F5F353 /* Info.plist */,
 				37EC509E225D96F400863132 /* NoteNameUtilTest.swift */,
+				370AE12022657FDE00C3C361 /* StatsTest.swift */,
 			);
 			path = PortableEarTrainerTests;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 			children = (
 				37E4A5A4225C54CE00814DFF /* MajorScale.swift */,
 				37EC509C225D93E200863132 /* NoteName.swift */,
+				370AE11E22657F9F00C3C361 /* Stats.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -412,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37EC509D225D93E200863132 /* NoteName.swift in Sources */,
+				370AE11F22657F9F00C3C361 /* Stats.swift in Sources */,
 				3721E3FF226223C700A8E47B /* MajorScaleQuiz.swift in Sources */,
 				37D265F72262D896003103C3 /* MicTestViewController.swift in Sources */,
 				37D5750B225EE3C00042CC83 /* QuizViewController.swift in Sources */,
@@ -430,6 +437,7 @@
 			files = (
 				37EC509F225D96F400863132 /* NoteNameUtilTest.swift in Sources */,
 				3722A5C621F6936200F5F353 /* PortableEarTrainerTests.swift in Sources */,
+				370AE12122657FDE00C3C361 /* StatsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
