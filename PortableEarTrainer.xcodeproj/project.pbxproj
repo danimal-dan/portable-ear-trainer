@@ -176,6 +176,7 @@
 		37E4A59E225C374A00814DFF /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				373D8B9C2266DAFE00194973 /* PitchResponseAnalyzer.swift */,
 				37E4A59F225C37B800814DFF /* Major145Player.swift */,
 				37E4A5A1225C546000814DFF /* MajorScaleQuestion.swift */,
 				3721E3FE226223C700A8E47B /* MajorScaleQuiz.swift */,
@@ -189,7 +190,6 @@
 				37E4A5A4225C54CE00814DFF /* MajorScale.swift */,
 				37EC509C225D93E200863132 /* NoteName.swift */,
 				370AE11E22657F9F00C3C361 /* Stats.swift */,
-				373D8B9C2266DAFE00194973 /* PitchResponseAnalyzer.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";

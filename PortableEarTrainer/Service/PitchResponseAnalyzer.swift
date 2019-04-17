@@ -10,11 +10,18 @@ import Foundation
 import AudioKit
 
 class PitchResponseAnalyzer {
-    var tracker: AKFrequencyTracker;
-    var noiseFloor : Double = 0.01;
-    var trackerHistory : [FrequencyTrackerSnapshot] = [];
-    var ticker : UInt64 = 0;
-    var timer : Timer? = nil;
+    private var tracker: AKFrequencyTracker;
+    private var noiseFloor : Double = DefaultValues().noiseFloor;
+    private var trackerHistory : [FrequencyTrackerSnapshot] = DefaultValues().trackerHistory;
+    private var ticker : UInt64 = DefaultValues().ticker;
+    private var timer : Timer? = DefaultValues().timer;
+    
+    private struct DefaultValues {
+        let noiseFloor : Double = 0.01;
+        let trackerHistory : [FrequencyTrackerSnapshot] = [];
+        let ticker : UInt64 = 0;
+        let timer : Timer? = nil;
+    }
     
     struct FrequencyTrackerSnapshot {
         var frequency : Double;
@@ -23,30 +30,34 @@ class PitchResponseAnalyzer {
     }
     
     // config constants
-    let MIN_TRACKED_FREQUENCY = 32.7032; // C1
-    let MAX_TRACKED_FREQUENCY = 2093.0; // C7
-    let MIN_NUMBER_OF_HISTORY_POINTS = 5;
-    let MAX_FREQ_STD_DEVIATION_TO_SELECT_NOTE = 15.0;
-    let MIN_FREQ_STD_DEVIATION_TO_CLASSIFY_AS_SPORADIC = 100.0;
-    let MAX_NOISE_FLOOR = 0.16;
-    let MAX_STEADY_AMPLITUDE_STD_DEVIATION = 0.2;
+    private let MIN_TRACKED_FREQUENCY = 32.7032; // C1
+    private let MAX_TRACKED_FREQUENCY = 2093.0; // C7
+    private let MIN_NUMBER_OF_HISTORY_POINTS = 5;
+    private let MAX_FREQ_STD_DEVIATION_TO_SELECT_NOTE = 15.0;
+    private let MIN_FREQ_STD_DEVIATION_TO_CLASSIFY_AS_SPORADIC = 100.0;
+    private let MAX_NOISE_FLOOR = 0.16;
+    private let MAX_STEADY_AMPLITUDE_STD_DEVIATION = 0.2;
     
     init(_ tracker : AKFrequencyTracker) {
         self.tracker = tracker;
     }
     
     func start() {
-        if (self.timer == nil) {
-            self.timer = Timer.scheduledTimer(timeInterval: 0.1,
-                                              target: self,
-                                              selector: #selector(monitorFrequencyTrackerScheduledTask),
-                                              userInfo: nil,
-                                              repeats: true);
+        if self.timer != nil {
+            self.stop();
         }
+        
+        self.timer = Timer.scheduledTimer(timeInterval: 0.1,
+                                          target: self,
+                                          selector: #selector(monitorFrequencyTrackerScheduledTask),
+                                          userInfo: nil,
+                                          repeats: true);
     }
     
     func stop() {
         self.timer?.invalidate();
+        
+        self.resetState();
     }
     
     @objc func monitorFrequencyTrackerScheduledTask() {
@@ -133,5 +144,12 @@ class PitchResponseAnalyzer {
             print("clear front of history");
             self.trackerHistory.removeSubrange(0...MIN_NUMBER_OF_HISTORY_POINTS);
         }
+    }
+    
+    private func resetState() {
+        self.noiseFloor = DefaultValues().noiseFloor;
+        self.trackerHistory = DefaultValues().trackerHistory;
+        self.ticker = DefaultValues().ticker;
+        self.timer = DefaultValues().timer;
     }
 }
