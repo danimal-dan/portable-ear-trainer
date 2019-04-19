@@ -14,6 +14,7 @@ class MicTestViewController: AKLiveViewController {
     var mic: AKMicrophone!;
     var tracker: AKFrequencyTracker!;
     var silence: AKBooster!;
+    var pitchResponseAnalyzer : PitchResponseAnalyzer!;
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,22 +35,11 @@ class MicTestViewController: AKLiveViewController {
         rollingPlot.shouldFill = true
         rollingPlot.shouldMirror = true
         rollingPlot.color = AKColor.lightGray
-        rollingPlot.gain = 2
+        rollingPlot.gain = 1
         addView(rollingPlot)
         
-        Timer.scheduledTimer(timeInterval: 0.1,
-                             target: self,
-                             selector: #selector(updateUI),
-                             userInfo: nil,
-                             repeats: true)
-    }
-    
-    @objc func updateUI() {
-        if (tracker.amplitude > 0.1) {
-            // TODO: should require user to maintain note for some number of frames to make sure choice is deliberate.
-            print("FREQUENCY: " + String(format: "%0.1f", tracker.frequency));
-            print("NOTE NAME: " + NoteName.forFrequency(tracker.frequency))
-        }
+        self.pitchResponseAnalyzer = PitchResponseAnalyzer(tracker);
+        self.pitchResponseAnalyzer.start();
     }
 
     /*

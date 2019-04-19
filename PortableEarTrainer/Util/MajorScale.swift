@@ -14,6 +14,8 @@ final class MajorScale {
     static let IV : [Int] = [0, 5, 9, 12];
     static let V : [Int] = [2, 7, 11, 14];
     
+    private init() {}
+    
     static func getScaleDegree(_ degree : Int) -> Int {
         assert(degree > 0);
         let octaveOffset : Int = Int(floor(Double(degree) / Double(SCALE.count)) * 12);

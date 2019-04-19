@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Microphone is used to answer exercises and quizzes by saying the correct scale degree (or solfege) or by playing the note on your instrument.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Speech Recognition can be used to provide verbal answers to exercises and quizzes.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
