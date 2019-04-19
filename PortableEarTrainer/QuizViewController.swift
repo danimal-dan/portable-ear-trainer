@@ -22,10 +22,18 @@ class QuizViewController: UIViewController, QuizDelegate {
         PlayButton.isEnabled = true;
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.majorScaleQuiz.cancel();
+    }
+    
     @IBAction func onPlayButtonTap(_ sender: Any) {
         self.majorScaleQuiz.playQuestionSample();
     }
-
+    
+    @IBAction func quitButtonTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func onAnswerSelect(_ sender: Any) {
         guard let button = sender as? UIButton else {
             return
@@ -79,5 +87,9 @@ class QuizViewController: UIViewController, QuizDelegate {
         let percentage = ((Double(numberCorrect) / Double(totalAnswers)) * 100).rounded();
         
         self.CurrentScoreLabel.text = "Score: \(Int(percentage))% (\(numberCorrect) of \(totalAnswers))";
+    }
+    
+    deinit {
+        print("deinit quizview")
     }
 }

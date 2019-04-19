@@ -36,14 +36,18 @@ class Major145Player {
         if let performance = self.performance {
             AudioKit.output = self.bank;
             try AudioKit.start(withPeriodicFunctions: performance);
-            performance.start();
+            performance.start()
         }
     }
     
-    func stopSequence() throws {
+    func stopSequence() {
         if let performance = self.performance {
             performance.stop();
-            try AudioKit.stop();
+            do {
+                try AudioKit.stop();
+            } catch {
+                print("Could not stop audiokit")
+            }
         }
         self.iteration = 0;
     }
@@ -73,11 +77,7 @@ class Major145Player {
             self.iteration += 1;
             
             if (self.iteration > 8) {
-                do {
-                    try self.stopSequence();
-                } catch {
-                    print("could not stop sequence, uh oh");
-                }
+                self.stopSequence();
             }
         }
     }
@@ -92,5 +92,11 @@ class Major145Player {
         for tone in chordTones {
             bank.stop(noteNumber: self.startNote + UInt8(tone));
         }
+    }
+    
+    deinit {
+        self.stopSequence();
+        self.performance?.detach();
+        self.bank.detach();
     }
 }

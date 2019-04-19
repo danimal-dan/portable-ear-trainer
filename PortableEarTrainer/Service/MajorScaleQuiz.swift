@@ -26,6 +26,10 @@ class MajorScaleQuiz {
         self.generateQuestions();
     }
     
+    func cancel() {
+        self.getCurrentQuestion().stopSample();
+    }
+    
     private func generateQuestions() {
         var questionList : [MajorScaleQuestion] = [];
         for _ in (0...numberOfQuestions) {

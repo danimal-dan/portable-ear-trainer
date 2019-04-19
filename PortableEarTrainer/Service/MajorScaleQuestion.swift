@@ -22,15 +22,11 @@ class MajorScaleQuestion {
     func playSample() throws {
         let target = getTargetNoteNumber(keyStart: key)
         print("KEY/TARGET", key, target);
-        try major145Player.playSequence(keyStartNote: key, targetNote: target)
+        try self.major145Player.playSequence(keyStartNote: key, targetNote: target)
     }
     
     func stopSample() {
-        do {
-            try major145Player.stopSequence();
-        } catch {
-            print("error stopping sequence")
-        }
+        self.major145Player.stopSequence();
     }
     
     func verifyAnswer(_ scaleDegree : Int) -> Bool {
