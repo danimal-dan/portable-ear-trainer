@@ -57,6 +57,17 @@
                                     <segue destination="YO7-f3-MCg" kind="show" id="f5i-jR-u8j"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSZ-dN-270">
+                                <rect key="frame" x="10" y="471" width="394" height="40"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ouY-xS-N10"/>
+                                </constraints>
+                                <state key="normal" title="Test Speech"/>
+                                <connections>
+                                    <segue destination="6VH-o2-Myr" kind="show" id="DQW-4q-Csy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -65,10 +76,13 @@
                             <constraint firstItem="Gid-vA-n00" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="4MI-XX-8Zw"/>
                             <constraint firstItem="nLv-Kf-jC4" firstAttribute="top" secondItem="Ogd-2x-Mgs" secondAttribute="bottom" constant="79" id="5JD-IZ-eq1"/>
                             <constraint firstItem="KTb-ep-d27" firstAttribute="top" secondItem="Gid-vA-n00" secondAttribute="bottom" constant="10" id="69P-xd-zD1"/>
+                            <constraint firstItem="NSZ-dN-270" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="8Em-as-QxG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="Ogd-2x-Mgs" secondAttribute="bottom" constant="-198" id="AR8-OZ-ddn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NSZ-dN-270" secondAttribute="trailing" constant="10" id="Fhg-2U-fbv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nLv-Kf-jC4" secondAttribute="trailing" constant="10" id="Ggd-kx-Xcn"/>
                             <constraint firstItem="KTb-ep-d27" firstAttribute="top" secondItem="Gid-vA-n00" secondAttribute="bottom" constant="10" id="QlO-Hb-boG"/>
                             <constraint firstItem="Ogd-2x-Mgs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="R0D-n6-LcW"/>
+                            <constraint firstItem="NSZ-dN-270" firstAttribute="top" secondItem="KTb-ep-d27" secondAttribute="bottom" constant="10" id="Rca-Vp-Jgv"/>
                             <constraint firstItem="Gid-vA-n00" firstAttribute="top" secondItem="nLv-Kf-jC4" secondAttribute="bottom" constant="10" id="VWI-jP-O16"/>
                             <constraint firstItem="KTb-ep-d27" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="XN9-Oe-61E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KTb-ep-d27" secondAttribute="trailing" constant="10" id="Yx0-RD-sSk"/>
@@ -293,6 +307,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xOf-52-VYb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1638" y="814"/>
+        </scene>
+        <!--Speech Test View Controller-->
+        <scene sceneID="hGV-dT-6AJ">
+            <objects>
+                <viewController id="6VH-o2-Myr" customClass="SpeechTestViewController" customModule="PortableEarTrainer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yp6-6w-T3q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTj-XF-xF4">
+                                <rect key="frame" x="10" y="194" width="392" height="34"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Say Something"/>
+                                <connections>
+                                    <action selector="recordButtonPressed:" destination="YO7-f3-MCg" eventType="touchUpInside" id="Q1X-ow-haG"/>
+                                    <action selector="saySomethingTapped:" destination="6VH-o2-Myr" eventType="touchUpInside" id="BXb-Tq-8yT"/>
+                                    <action selector="saySomethingTapped:" destination="iiC-K5-Dpq" eventType="touchUpInside" id="bbX-Ul-i39"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0F-gG-AhW">
+                                <rect key="frame" x="0.0" y="646" width="414" height="216"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mTj-XF-xF4" firstAttribute="trailing" secondItem="AP6-E8-P4o" secondAttribute="trailing" constant="-12" id="B2I-eP-Ph8"/>
+                            <constraint firstItem="mTj-XF-xF4" firstAttribute="top" secondItem="AP6-E8-P4o" secondAttribute="top" constant="150" id="PsP-u5-a40"/>
+                            <constraint firstItem="AP6-E8-P4o" firstAttribute="bottom" secondItem="k0F-gG-AhW" secondAttribute="bottom" id="bZB-NV-BJn"/>
+                            <constraint firstItem="k0F-gG-AhW" firstAttribute="leading" secondItem="AP6-E8-P4o" secondAttribute="leading" id="e7i-Cq-49H"/>
+                            <constraint firstAttribute="trailing" secondItem="k0F-gG-AhW" secondAttribute="trailing" id="iiO-ro-KuM"/>
+                            <constraint firstItem="mTj-XF-xF4" firstAttribute="leading" secondItem="AP6-E8-P4o" secondAttribute="leading" constant="10" id="mWk-Jp-FzR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AP6-E8-P4o"/>
+                    </view>
+                    <connections>
+                        <outlet property="voicePicker" destination="k0F-gG-AhW" id="2V6-pl-TU6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QXo-bH-K0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="iiC-K5-Dpq" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2438" y="814"/>
         </scene>
     </scenes>
 </document>
