@@ -83,6 +83,17 @@
                                     <segue destination="6VH-o2-Myr" kind="show" id="DQW-4q-Csy"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfe-c7-Own">
+                                <rect key="frame" x="10" y="519" width="394" height="40"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="xWv-61-kKZ"/>
+                                </constraints>
+                                <state key="normal" title="UI"/>
+                                <connections>
+                                    <segue destination="aKB-Sm-rp3" kind="show" id="nVh-Ae-LoY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -99,8 +110,11 @@
                             <constraint firstItem="Ogd-2x-Mgs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="R0D-n6-LcW"/>
                             <constraint firstItem="NSZ-dN-270" firstAttribute="top" secondItem="KTb-ep-d27" secondAttribute="bottom" constant="10" id="Rca-Vp-Jgv"/>
                             <constraint firstItem="Gid-vA-n00" firstAttribute="top" secondItem="nLv-Kf-jC4" secondAttribute="bottom" constant="10" id="VWI-jP-O16"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cfe-c7-Own" secondAttribute="trailing" constant="10" id="VrW-fK-yVP"/>
                             <constraint firstItem="KTb-ep-d27" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="XN9-Oe-61E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KTb-ep-d27" secondAttribute="trailing" constant="10" id="Yx0-RD-sSk"/>
+                            <constraint firstItem="cfe-c7-Own" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="eiC-km-K01"/>
+                            <constraint firstItem="cfe-c7-Own" firstAttribute="top" secondItem="NSZ-dN-270" secondAttribute="bottom" constant="8" id="uhk-xn-JpV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ogd-2x-Mgs" secondAttribute="trailing" constant="10" id="yTw-Kf-qzg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -279,6 +293,44 @@
                 <exit id="6oi-lT-Tdc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="841" y="86"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="o3V-fn-xQf">
+            <objects>
+                <viewController id="aKB-Sm-rp3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nIn-e8-rGt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RbU-x4-2ax" customClass="LessonCard" customModule="PortableEarTrainer" customModuleProvider="target">
+                                <rect key="frame" x="20" y="74" width="240" height="154"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Major Scale"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mP5-IO-j0z" customClass="SingleOctaveKeyboard" customModule="PortableEarTrainer" customModuleProvider="target">
+                                <rect key="frame" x="36" y="256" width="224" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="1lV-iC-HDP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tkb-B0-k5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3211.594202898551" y="813.61607142857144"/>
         </scene>
         <!--Mic Test View Controller-->
         <scene sceneID="jYC-6z-cAR">
