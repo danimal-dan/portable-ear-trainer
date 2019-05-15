@@ -17,8 +17,11 @@ class LessonCard: UIView {
     
     @IBInspectable
     var cornerRadius: CGFloat = 10.0
+    
+    @IBInspectable
+    var cardPadding: CGFloat = 10.0
 
-    var titleLayer: CATextLayer!
+    var titleLabel: UILabel!
     
     @IBInspectable
     var title : String = ""
@@ -26,10 +29,14 @@ class LessonCard: UIView {
     @IBInspectable
     var titleColor: UIColor = UIColor.white
     
+    var keyboardView : SingleOctaveKeyboard!
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         initBackgroundLayer()
         initTitle()
+        initKeyboardView()
+        setupLayout()
     }
     
     func initBackgroundLayer() {
@@ -49,19 +56,48 @@ class LessonCard: UIView {
     }
     
     func initTitle() {
-        if titleLayer != nil {
+        if titleLabel != nil {
             return;
         }
         
-        titleLayer = CATextLayer()
-        layer.addSublayer(titleLayer)
+        titleLabel = UILabel()
         
-        titleLayer.font = UIFont.boldSystemFont(ofSize: 24)
-        titleLayer.alignmentMode = .left
-        titleLayer.foregroundColor = titleColor.cgColor
-        titleLayer.string = title
-        titleLayer.fontSize = 24
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        titleLabel.textAlignment = .left
+        titleLabel.textColor = titleColor
+        titleLabel.text = title
         
-        titleLayer.frame = layer.bounds.insetBy(dx: 10, dy: 10);
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.addSubview(titleLabel)
+    }
+    
+    func initKeyboardView() {
+        if (keyboardView != nil) {
+            return;
+        }
+        
+        keyboardView = SingleOctaveKeyboard();
+        
+        keyboardView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.addSubview(keyboardView);
+    }
+    
+    func setupLayout() {
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: cardPadding),
+            titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: cardPadding),
+            titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: cardPadding),
+            
+            keyboardView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: cardPadding / 2),
+            keyboardView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: cardPadding),
+            keyboardView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: cardPadding * -1),
+            keyboardView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: cardPadding * -1)
+        ])
+    }
+    
+    override class var requiresConstraintBasedLayout: Bool {
+        return true
     }
 }
