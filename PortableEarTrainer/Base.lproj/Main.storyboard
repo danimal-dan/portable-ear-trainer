@@ -303,7 +303,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RbU-x4-2ax" customClass="LessonCard" customModule="PortableEarTrainer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="74" width="240" height="165"/>
+                                <rect key="frame" x="20" y="74" width="211" height="154"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundLayerColor">
