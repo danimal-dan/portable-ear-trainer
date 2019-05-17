@@ -689,7 +689,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 87C9AB33D71DE5D3416D140B /* Pods-PortableEarTrainerTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PortableEarTrainerTests/Info.plist;
@@ -710,7 +709,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 49C697A36CC9012C6CD23028 /* Pods-PortableEarTrainerTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PortableEarTrainerTests/Info.plist;
@@ -731,7 +729,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DD7A5E9586380C5253E815CA /* Pods-PortableEarTrainerUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PortableEarTrainerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -751,7 +748,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ED0D734DCE1E09A524E19325 /* Pods-PortableEarTrainerUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PortableEarTrainerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
