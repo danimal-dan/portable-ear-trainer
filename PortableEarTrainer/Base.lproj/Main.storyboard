@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZcC-w0-lL3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VMr-cx-fUI">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,30 +10,92 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="BeG-hv-k6k">
+        <!--Tab Bar Controller-->
+        <scene sceneID="wWy-vX-70Y">
             <objects>
-                <navigationController navigationBarHidden="YES" id="ZcC-w0-lL3" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="esw-gG-daG">
+                <tabBarController id="VMr-cx-fUI" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jsr-N6-fGG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="eP7-VO-dz8"/>
+                        <segue destination="Mw8-aY-2cj" kind="relationship" relationship="viewControllers" id="u2R-IS-0Rj"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="X95-tJ-WeS"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8AE-iB-9Zb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hda-ca-4Um" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-594" y="86"/>
+            <point key="canvasLocation" x="-578" y="-642"/>
         </scene>
-        <!--Home View Controller-->
+        <!--PortableEarTrainer-->
+        <scene sceneID="8fx-sn-3sf">
+            <objects>
+                <viewController title="PortableEarTrainer" id="Mw8-aY-2cj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rqR-gw-m21">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PORTABLE EAR TRAINER" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZzT-E4-zdm">
+                                <rect key="frame" x="20" y="59" width="374" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rre-Bf-d2E" customClass="LessonCard" customModule="PortableEarTrainer" customModuleProvider="target">
+                                <rect key="frame" x="20" y="179" width="275" height="185"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="G4X-oG-JZs"/>
+                                    <constraint firstAttribute="height" constant="185" id="t1R-NE-wnd"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Single Octave (1-4)"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cardPadding">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="activeKeys" value="0,1,2,3"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Major Scale" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQE-wY-ETE">
+                                <rect key="frame" x="20" y="124" width="374" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rre-Bf-d2E" firstAttribute="top" secondItem="ZQE-wY-ETE" secondAttribute="bottom" constant="25" id="Ba8-xP-O2w"/>
+                            <constraint firstItem="ZzT-E4-zdm" firstAttribute="top" secondItem="qHI-RX-Mu6" secondAttribute="top" constant="15" id="Bi9-NF-dHK"/>
+                            <constraint firstItem="ZQE-wY-ETE" firstAttribute="leading" secondItem="qHI-RX-Mu6" secondAttribute="leading" constant="20" id="CgN-Fw-mED"/>
+                            <constraint firstItem="qHI-RX-Mu6" firstAttribute="trailing" secondItem="ZQE-wY-ETE" secondAttribute="trailing" constant="20" id="eOs-CW-hES"/>
+                            <constraint firstItem="ZQE-wY-ETE" firstAttribute="top" secondItem="ZzT-E4-zdm" secondAttribute="bottom" constant="35" id="hif-ku-G4M"/>
+                            <constraint firstItem="qHI-RX-Mu6" firstAttribute="trailing" secondItem="ZzT-E4-zdm" secondAttribute="trailing" constant="20" id="k5O-Tf-q4O"/>
+                            <constraint firstItem="rre-Bf-d2E" firstAttribute="leading" secondItem="qHI-RX-Mu6" secondAttribute="leading" constant="20" id="t5e-sI-WkO"/>
+                            <constraint firstItem="ZzT-E4-zdm" firstAttribute="leading" secondItem="qHI-RX-Mu6" secondAttribute="leading" constant="20" id="zPr-l8-4kP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qHI-RX-Mu6"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Course" id="oVp-tq-tme"/>
+                    <navigationItem key="navigationItem" id="m5U-MY-ItE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MB6-74-jIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="-642"/>
+        </scene>
+        <!--Debug Screens-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="PortableEarTrainer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DebuggerViewController" customModule="PortableEarTrainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Portable Ear Trainer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogd-2x-Mgs">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debugging Paths" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogd-2x-Mgs">
                                 <rect key="frame" x="10" y="215" width="394" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
@@ -119,6 +181,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Debug Screens" id="0Xx-Ty-Y5Z"/>
                     <navigationItem key="navigationItem" id="SwJ-dJ-Rzd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -292,7 +355,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kfd-wt-gqw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="6oi-lT-Tdc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="841" y="86"/>
+            <point key="canvasLocation" x="896" y="86"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="o3V-fn-xQf">
@@ -319,12 +382,16 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cardPadding">
                                         <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="activeKeys" value="1"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mP5-IO-j0z" customClass="SingleOctaveKeyboard" customModule="PortableEarTrainer" customModuleProvider="target">
                                 <rect key="frame" x="49" y="272" width="211" height="106"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="activeKeys" value="0"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

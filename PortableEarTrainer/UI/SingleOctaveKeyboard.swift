@@ -10,11 +10,46 @@ import UIKit
 
 @IBDesignable
 class SingleOctaveKeyboard: UIView {
+    @IBInspectable var activeKeys: String = ""
+
+    var activeKeyIndexes: [Int] = []
+
     var stackView: UIStackView!
     var initialized = false
 
+    enum KeyType {
+        case white
+        case black
+    }
+
+    var keyLayout: [KeyType] = [
+        .white,
+        .black,
+        .white,
+        .black,
+        .white,
+        .white,
+        .black,
+        .white,
+        .black,
+        .white,
+        .black,
+        .white,
+        .white
+    ]
+
+    convenience init(activeKeys: String) {
+        self.init()
+        self.activeKeys = activeKeys
+    }
+
     override func layoutSubviews() {
         super.layoutSubviews()
+
+        activeKeyIndexes = activeKeys.split(separator: ",").map({ s in
+            Int(s.trimmingCharacters(in: .whitespaces)) ?? -1
+        })
+
         if initialized == false {
             initKeys()
         }
@@ -29,24 +64,26 @@ class SingleOctaveKeyboard: UIView {
         let whiteKeySize = CGSize(width: whiteKeyWidth, height: layerHeight)
         let blackKeySize = CGSize(width: whiteKeyWidth / 2.0, height: layerHeight / 1.6)
 
-        for index in 0...7 {
-            let xOffset = whiteKeyWidth * CGFloat(index)
+        var currentWhiteKeyOffset: CGFloat = 0.0
+        for (index, keyType) in keyLayout.enumerated() {
+            let isActive = activeKeyIndexes.contains(index)
+            if .white == keyType {
+                let whiteKeyView = initWhiteKey(whiteKeySize, active: isActive)
+                whiteKeyView.frame = whiteKeyView.frame.offsetBy(dx: currentWhiteKeyOffset, dy: 0)
+                layer.addSublayer(whiteKeyView)
 
-            let whiteKeyView = initWhiteKey(whiteKeySize)
-            whiteKeyView.frame = whiteKeyView.frame.offsetBy(dx: xOffset, dy: 0)
-            layer.addSublayer(whiteKeyView)
-
-            if index != 0 && index != 3 && index != 7 {
-                let blackKeyView = initBlackKey(blackKeySize)
-                blackKeyView.frame = blackKeyView.frame.offsetBy(dx: xOffset - (blackKeySize.width / 2.0), dy: 0)
+                currentWhiteKeyOffset += whiteKeyWidth
+            } else {
+                let blackKeyView = initBlackKey(blackKeySize, active: isActive)
+                blackKeyView.frame = blackKeyView.frame.offsetBy(dx: currentWhiteKeyOffset - (blackKeySize.width / 2.0), dy: 0)
                 layer.addSublayer(blackKeyView)
             }
         }
     }
 
-    func initWhiteKey(_ size: CGSize) -> CAShapeLayer {
+    func initWhiteKey(_ size: CGSize, active: Bool) -> CAShapeLayer {
         let key = CAShapeLayer()
-        key.fillColor = UIColor.white.cgColor
+        key.fillColor = active ? UIColor.blue.cgColor : UIColor.white.cgColor
         key.borderColor = UIColor.darkGray.cgColor
         key.borderWidth = 2.0
         key.frame = CGRect(size: size)
@@ -56,14 +93,16 @@ class SingleOctaveKeyboard: UIView {
         return key
     }
 
-    func initBlackKey(_ size: CGSize) -> CAShapeLayer {
+    func initBlackKey(_ size: CGSize, active: Bool) -> CAShapeLayer {
         let key = CAShapeLayer()
-        key.fillColor = UIColor.black.cgColor
+
+        key.fillColor = active ? UIColor.blue.cgColor : UIColor.black.cgColor
         key.borderColor = UIColor.black.cgColor
         key.borderWidth = 2.0
         key.frame = CGRect(size: size)
         key.bounds = CGRect(size: size)
         key.path = UIBezierPath(rect: key.bounds).cgPath
+        key.zPosition = 2
 
         return key
     }

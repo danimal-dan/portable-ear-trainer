@@ -31,6 +31,8 @@ class LessonCard: UIView {
 
     var keyboardView: SingleOctaveKeyboard!
 
+    @IBInspectable var activeKeys: String = ""
+
     override func layoutSubviews() {
         super.layoutSubviews()
         initBackgroundLayer()
@@ -77,7 +79,7 @@ class LessonCard: UIView {
             return
         }
 
-        keyboardView = SingleOctaveKeyboard()
+        keyboardView = SingleOctaveKeyboard(activeKeys: activeKeys)
         keyboardView.translatesAutoresizingMaskIntoConstraints = false
 
         self.addSubview(keyboardView)

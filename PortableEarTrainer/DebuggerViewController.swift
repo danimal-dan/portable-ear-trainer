@@ -9,7 +9,7 @@
 import UIKit
 import AudioKit
 
-class HomeViewController: UIViewController {
+class DebuggerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
