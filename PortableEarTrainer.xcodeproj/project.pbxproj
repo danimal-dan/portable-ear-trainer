@@ -19,6 +19,7 @@
 		373D8B9D2266DAFE00194973 /* PitchResponseAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373D8B9C2266DAFE00194973 /* PitchResponseAnalyzer.swift */; };
 		374B2577228A584400A8BB60 /* LessonCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B2576228A584400A8BB60 /* LessonCard.swift */; };
 		374EA8822262EA1E00BC565B /* VoiceRecognitionTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374EA8812262EA1E00BC565B /* VoiceRecognitionTestViewController.swift */; };
+		378B59B12293A59500478667 /* LessonSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B59B02293A59500478667 /* LessonSection.swift */; };
 		37B0B1A82269897F0032AAC0 /* SpeechTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B0B1A72269897F0032AAC0 /* SpeechTestViewController.swift */; };
 		37B31213228A64A2003719D4 /* SingleOctaveKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B31212228A64A2003719D4 /* SingleOctaveKeyboard.swift */; };
 		37D265F72262D896003103C3 /* MicTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D265F62262D896003103C3 /* MicTestViewController.swift */; };
@@ -72,6 +73,7 @@
 		373D8B9C2266DAFE00194973 /* PitchResponseAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchResponseAnalyzer.swift; sourceTree = "<group>"; };
 		374B2576228A584400A8BB60 /* LessonCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCard.swift; sourceTree = "<group>"; };
 		374EA8812262EA1E00BC565B /* VoiceRecognitionTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecognitionTestViewController.swift; sourceTree = "<group>"; };
+		378B59B02293A59500478667 /* LessonSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonSection.swift; sourceTree = "<group>"; };
 		37B0B1A72269897F0032AAC0 /* SpeechTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechTestViewController.swift; sourceTree = "<group>"; };
 		37B31212228A64A2003719D4 /* SingleOctaveKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleOctaveKeyboard.swift; sourceTree = "<group>"; };
 		37D265F62262D896003103C3 /* MicTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicTestViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				374B2576228A584400A8BB60 /* LessonCard.swift */,
 				37B31212228A64A2003719D4 /* SingleOctaveKeyboard.swift */,
+				378B59B02293A59500478667 /* LessonSection.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				37B31213228A64A2003719D4 /* SingleOctaveKeyboard.swift in Sources */,
 				373D8B9D2266DAFE00194973 /* PitchResponseAnalyzer.swift in Sources */,
 				37B0B1A82269897F0032AAC0 /* SpeechTestViewController.swift in Sources */,
+				378B59B12293A59500478667 /* LessonSection.swift in Sources */,
 				37D265F72262D896003103C3 /* MicTestViewController.swift in Sources */,
 				37D5750B225EE3C00042CC83 /* QuizViewController.swift in Sources */,
 				37E4A5A2225C546000814DFF /* MajorScaleQuestion.swift in Sources */,

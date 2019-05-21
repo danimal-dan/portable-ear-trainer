@@ -60,20 +60,47 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="activeKeys" value="0,1,2,3"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Major Scale" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQE-wY-ETE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Major Scale (Manual)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQE-wY-ETE">
                                 <rect key="frame" x="20" y="124" width="374" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GX7-pB-y9n" customClass="LessonSection" customModule="PortableEarTrainer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="384" width="414" height="275"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="275" id="75H-Id-XD8"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="275" id="MnO-gU-T9N"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Major Scale (LessonSection.swift)"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cardPadding">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="activeKeys" value="0,1,2,3"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="sectionPadding">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="qHI-RX-Mu6" firstAttribute="trailing" secondItem="GX7-pB-y9n" secondAttribute="trailing" id="43j-gQ-eTA"/>
                             <constraint firstItem="rre-Bf-d2E" firstAttribute="top" secondItem="ZQE-wY-ETE" secondAttribute="bottom" constant="25" id="Ba8-xP-O2w"/>
                             <constraint firstItem="ZzT-E4-zdm" firstAttribute="top" secondItem="qHI-RX-Mu6" secondAttribute="top" constant="15" id="Bi9-NF-dHK"/>
                             <constraint firstItem="ZQE-wY-ETE" firstAttribute="leading" secondItem="qHI-RX-Mu6" secondAttribute="leading" constant="20" id="CgN-Fw-mED"/>
+                            <constraint firstItem="GX7-pB-y9n" firstAttribute="leading" secondItem="qHI-RX-Mu6" secondAttribute="leading" id="Kmb-9e-ndw"/>
                             <constraint firstItem="qHI-RX-Mu6" firstAttribute="trailing" secondItem="ZQE-wY-ETE" secondAttribute="trailing" constant="20" id="eOs-CW-hES"/>
                             <constraint firstItem="ZQE-wY-ETE" firstAttribute="top" secondItem="ZzT-E4-zdm" secondAttribute="bottom" constant="35" id="hif-ku-G4M"/>
+                            <constraint firstItem="GX7-pB-y9n" firstAttribute="top" secondItem="rre-Bf-d2E" secondAttribute="bottom" constant="20" id="jKB-nS-h8Q"/>
                             <constraint firstItem="qHI-RX-Mu6" firstAttribute="trailing" secondItem="ZzT-E4-zdm" secondAttribute="trailing" constant="20" id="k5O-Tf-q4O"/>
                             <constraint firstItem="rre-Bf-d2E" firstAttribute="leading" secondItem="qHI-RX-Mu6" secondAttribute="leading" constant="20" id="t5e-sI-WkO"/>
                             <constraint firstItem="ZzT-E4-zdm" firstAttribute="leading" secondItem="qHI-RX-Mu6" secondAttribute="leading" constant="20" id="zPr-l8-4kP"/>
@@ -85,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MB6-74-jIa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="-642"/>
+            <point key="canvasLocation" x="137.68115942028987" y="-642.1875"/>
         </scene>
         <!--Debug Screens-->
         <scene sceneID="tne-QT-ifu">

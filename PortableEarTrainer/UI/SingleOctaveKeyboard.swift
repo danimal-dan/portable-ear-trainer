@@ -57,7 +57,7 @@ class SingleOctaveKeyboard: UIView {
         initialized = true
     }
 
-    func initKeys() {
+    private func initKeys() {
         let layerWidth = layer.bounds.width
         let layerHeight = layer.bounds.height
         let whiteKeyWidth = layerWidth / 8.0
@@ -81,7 +81,7 @@ class SingleOctaveKeyboard: UIView {
         }
     }
 
-    func initWhiteKey(_ size: CGSize, active: Bool) -> CAShapeLayer {
+    private func initWhiteKey(_ size: CGSize, active: Bool) -> CAShapeLayer {
         let key = CAShapeLayer()
         key.fillColor = active ? UIColor.blue.cgColor : UIColor.white.cgColor
         key.borderColor = UIColor.darkGray.cgColor
@@ -93,7 +93,7 @@ class SingleOctaveKeyboard: UIView {
         return key
     }
 
-    func initBlackKey(_ size: CGSize, active: Bool) -> CAShapeLayer {
+    private func initBlackKey(_ size: CGSize, active: Bool) -> CAShapeLayer {
         let key = CAShapeLayer()
 
         key.fillColor = active ? UIColor.blue.cgColor : UIColor.black.cgColor

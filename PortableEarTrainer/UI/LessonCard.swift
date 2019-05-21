@@ -41,7 +41,7 @@ class LessonCard: UIView {
         setupLayout()
     }
 
-    func initBackgroundLayer() {
+    private func initBackgroundLayer() {
         if backgroundLayer != nil {
             return
         }
@@ -57,7 +57,7 @@ class LessonCard: UIView {
         backgroundLayer.frame = layer.bounds
     }
 
-    func initTitle() {
+    private func initTitle() {
         if titleLabel != nil {
             return
         }
@@ -74,7 +74,7 @@ class LessonCard: UIView {
         self.addSubview(titleLabel)
     }
 
-    func initKeyboardView() {
+    private func initKeyboardView() {
         if keyboardView != nil {
             return
         }
@@ -85,7 +85,7 @@ class LessonCard: UIView {
         self.addSubview(keyboardView)
     }
 
-    func setupLayout() {
+    private func setupLayout() {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: cardPadding),
             titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: cardPadding),
