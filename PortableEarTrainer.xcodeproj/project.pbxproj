@@ -24,6 +24,9 @@
 		37B31213228A64A2003719D4 /* SingleOctaveKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B31212228A64A2003719D4 /* SingleOctaveKeyboard.swift */; };
 		37D265F72262D896003103C3 /* MicTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D265F62262D896003103C3 /* MicTestViewController.swift */; };
 		37D5750B225EE3C00042CC83 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D5750A225EE3C00042CC83 /* QuizViewController.swift */; };
+		37E2B4752294F272004AAE5F /* CoursesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2B4742294F272004AAE5F /* CoursesTabViewController.swift */; };
+		37E2B4782294F348004AAE5F /* LessonSectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2B4772294F348004AAE5F /* LessonSectionDelegate.swift */; };
+		37E2B47A2294F516004AAE5F /* LessonSectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2B4792294F516004AAE5F /* LessonSectionDataSource.swift */; };
 		37E4A563225C0FA500814DFF /* DebuggerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3722A5B221F6935F00F5F353 /* DebuggerViewController.swift */; };
 		37E4A5A0225C37B800814DFF /* Major145Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E4A59F225C37B800814DFF /* Major145Player.swift */; };
 		37E4A5A2225C546000814DFF /* MajorScaleQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E4A5A1225C546000814DFF /* MajorScaleQuestion.swift */; };
@@ -78,6 +81,9 @@
 		37B31212228A64A2003719D4 /* SingleOctaveKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleOctaveKeyboard.swift; sourceTree = "<group>"; };
 		37D265F62262D896003103C3 /* MicTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicTestViewController.swift; sourceTree = "<group>"; };
 		37D5750A225EE3C00042CC83 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		37E2B4742294F272004AAE5F /* CoursesTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesTabViewController.swift; sourceTree = "<group>"; };
+		37E2B4772294F348004AAE5F /* LessonSectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonSectionDelegate.swift; sourceTree = "<group>"; };
+		37E2B4792294F516004AAE5F /* LessonSectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonSectionDataSource.swift; sourceTree = "<group>"; };
 		37E4A59F225C37B800814DFF /* Major145Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Major145Player.swift; sourceTree = "<group>"; };
 		37E4A5A1225C546000814DFF /* MajorScaleQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorScaleQuestion.swift; sourceTree = "<group>"; };
 		37E4A5A4225C54CE00814DFF /* MajorScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorScale.swift; sourceTree = "<group>"; };
@@ -153,6 +159,7 @@
 				3722A5B221F6935F00F5F353 /* DebuggerViewController.swift */,
 				374EA8812262EA1E00BC565B /* VoiceRecognitionTestViewController.swift */,
 				3722A5B421F6935F00F5F353 /* Main.storyboard */,
+				37E2B4742294F272004AAE5F /* CoursesTabViewController.swift */,
 				37B0B1A72269897F0032AAC0 /* SpeechTestViewController.swift */,
 				37D265F62262D896003103C3 /* MicTestViewController.swift */,
 				37D5750A225EE3C00042CC83 /* QuizViewController.swift */,
@@ -186,11 +193,21 @@
 		374B2575228A580D00A8BB60 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				37E2B4762294F31F004AAE5F /* LessonSection */,
 				374B2576228A584400A8BB60 /* LessonCard.swift */,
 				37B31212228A64A2003719D4 /* SingleOctaveKeyboard.swift */,
-				378B59B02293A59500478667 /* LessonSection.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		37E2B4762294F31F004AAE5F /* LessonSection */ = {
+			isa = PBXGroup;
+			children = (
+				378B59B02293A59500478667 /* LessonSection.swift */,
+				37E2B4772294F348004AAE5F /* LessonSectionDelegate.swift */,
+				37E2B4792294F516004AAE5F /* LessonSectionDataSource.swift */,
+			);
+			path = LessonSection;
 			sourceTree = "<group>";
 		};
 		37E4A59E225C374A00814DFF /* Service */ = {
@@ -408,7 +425,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\nswiftlint autocorrect\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		48801403B0E19A5B1C928B5B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -466,10 +483,13 @@
 				370AE11F22657F9F00C3C361 /* Stats.swift in Sources */,
 				3721E3FF226223C700A8E47B /* MajorScaleQuiz.swift in Sources */,
 				37B31213228A64A2003719D4 /* SingleOctaveKeyboard.swift in Sources */,
+				37E2B47A2294F516004AAE5F /* LessonSectionDataSource.swift in Sources */,
+				37E2B4752294F272004AAE5F /* CoursesTabViewController.swift in Sources */,
 				373D8B9D2266DAFE00194973 /* PitchResponseAnalyzer.swift in Sources */,
 				37B0B1A82269897F0032AAC0 /* SpeechTestViewController.swift in Sources */,
 				378B59B12293A59500478667 /* LessonSection.swift in Sources */,
 				37D265F72262D896003103C3 /* MicTestViewController.swift in Sources */,
+				37E2B4782294F348004AAE5F /* LessonSectionDelegate.swift in Sources */,
 				37D5750B225EE3C00042CC83 /* QuizViewController.swift in Sources */,
 				37E4A5A2225C546000814DFF /* MajorScaleQuestion.swift in Sources */,
 				37E4A5A5225C54CE00814DFF /* MajorScale.swift in Sources */,

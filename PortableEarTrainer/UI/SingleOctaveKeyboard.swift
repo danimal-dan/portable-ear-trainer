@@ -34,7 +34,6 @@ class SingleOctaveKeyboard: UIView {
         .black,
         .white,
         .black,
-        .white,
         .white
     ]
 
@@ -60,7 +59,8 @@ class SingleOctaveKeyboard: UIView {
     private func initKeys() {
         let layerWidth = layer.bounds.width
         let layerHeight = layer.bounds.height
-        let whiteKeyWidth = layerWidth / 8.0
+        let numberOfWhiteKeys = keyLayout.filter { $0 == .white }.count
+        let whiteKeyWidth = layerWidth / CGFloat(numberOfWhiteKeys)
         let whiteKeySize = CGSize(width: whiteKeyWidth, height: layerHeight)
         let blackKeySize = CGSize(width: whiteKeyWidth / 2.0, height: layerHeight / 1.6)
 

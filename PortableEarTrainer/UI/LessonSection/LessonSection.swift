@@ -10,7 +10,9 @@ import UIKit
 
 @IBDesignable
 class LessonSection: UIView {
-    var lessons: [LessonCard] = []
+    weak var delegate: LessonSectionDelegate?
+
+    weak var dataSource: LessonSectionDataSource?
 
     @IBInspectable
     var sectionPadding: CGFloat = 10.0
@@ -59,34 +61,21 @@ class LessonSection: UIView {
         scrollView.bounces = true
         scrollView.isDirectionalLockEnabled = true
         scrollView.alwaysBounceHorizontal = true
-        scrollView.backgroundColor = UIColor.green
         scrollView.contentMode = .left
         scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
+
         self.addSubview(scrollView)
     }
 
     private func addLessonCards() {
-        let majorScaleLesson1 = LessonCard()
-        majorScaleLesson1.frame = CGRect.init(width: 250, height: 200)
-        majorScaleLesson1.bounds = CGRect.init(width: 250, height: 200)
-        majorScaleLesson1.cardPadding = 20
-        majorScaleLesson1.activeKeys = "0,1,2,3"
-        majorScaleLesson1.title = "Major Scale"
-        majorScaleLesson1.translatesAutoresizingMaskIntoConstraints = false
-
-        let majorScaleLesson2 = LessonCard()
-        majorScaleLesson2.frame = CGRect.init(width: 250, height: 200)
-        majorScaleLesson2.bounds = CGRect.init(width: 250, height: 200)
-        majorScaleLesson2.cardPadding = 20
-        majorScaleLesson2.activeKeys = "4,5,6,7"
-        majorScaleLesson2.title = "Major Scale 2"
-        majorScaleLesson2.translatesAutoresizingMaskIntoConstraints = false
-
-        lessons.append(majorScaleLesson1)
-        lessons.append(majorScaleLesson2)
-
-        for lesson in lessons {
-            self.scrollView.addSubview(lesson)
+        if let numberOfLessons = dataSource?.numberOfRows(self) {
+            for lessonIndex in 0..<numberOfLessons {
+                if let lesson = dataSource?.lessonSection(self, cardForRowAt: lessonIndex) {
+                    self.scrollView.addSubview(lesson)
+                }
+            }
         }
     }
 
@@ -102,6 +91,8 @@ class LessonSection: UIView {
             scrollView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0),
             scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
         ]
+
+        let lessons = scrollView.subviews.filter { $0 is LessonCard }
 
         var anchorOnLeft: NSLayoutXAxisAnchor = scrollView.leftAnchor
         for lesson in lessons {
