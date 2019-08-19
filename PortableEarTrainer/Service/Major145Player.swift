@@ -12,9 +12,9 @@ import AudioKit
 class Major145Player {
     private var bank: AKOscillatorBank
     private var performance: AKPeriodicFunction?
-    private var iteration: Int = 0
     private var startNote: MIDINoteNumber = MIDINoteNumber(60)
     private var targetNote: MIDINoteNumber = MIDINoteNumber(60)
+    private var chordVoicing: DiatonicChordVoicing = DiatonicChordVoicing(MajorScale())
 
     init() {
         bank = AKOscillatorBank(waveform: AKTable(.triangle),
@@ -49,34 +49,38 @@ class Major145Player {
                 print("Could not stop audiokit")
             }
         }
-        self.iteration = 0
     }
 
     private func initPerformance() {
+        let oneChord = chordVoicing.getTriad(1);
+        let fourChord = chordVoicing.getTriad(4);
+        let fiveChord = chordVoicing.getTriad(5);
+        
+        var iteration = 0;
         self.performance = AKPeriodicFunction(frequency: 1.5) {
-            print("Performation iteration: ", self.iteration)
-            if self.iteration == 0 {
-                self.playChord(MajorScale.I)
-            } else if self.iteration == 1 {
-                self.stopChord(MajorScale.I)
-                self.playChord(MajorScale.IV)
-            } else if self.iteration == 2 {
-                self.stopChord(MajorScale.IV)
-                self.playChord(MajorScale.V)
-            } else if self.iteration == 3 {
-                self.stopChord(MajorScale.V)
-                self.playChord(MajorScale.I)
-            } else if self.iteration == 5 {
-                self.stopChord(MajorScale.I)
-            } else if self.iteration == 6 {
+            print("Performation iteration: ", iteration)
+            if iteration == 0 {
+                self.playChord(oneChord)
+            } else if iteration == 1 {
+                self.stopChord(oneChord)
+                self.playChord(fourChord)
+            } else if iteration == 2 {
+                self.stopChord(fourChord)
+                self.playChord(fiveChord)
+            } else if iteration == 3 {
+                self.stopChord(fiveChord)
+                self.playChord(oneChord)
+            } else if iteration == 5 {
+                self.stopChord(oneChord)
+            } else if iteration == 6 {
                 self.bank.play(noteNumber: self.targetNote, velocity: 80)
-            } else if self.iteration == 8 {
+            } else if iteration == 8 {
                 self.bank.stop(noteNumber: self.targetNote)
             }
 
-            self.iteration += 1
+            iteration += 1
 
-            if self.iteration > 8 {
+            if iteration > 8 {
                 self.stopSequence()
             }
         }

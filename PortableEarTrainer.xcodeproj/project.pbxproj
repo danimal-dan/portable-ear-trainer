@@ -30,11 +30,16 @@
 		37E4A563225C0FA500814DFF /* DebuggerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3722A5B221F6935F00F5F353 /* DebuggerViewController.swift */; };
 		37E4A5A0225C37B800814DFF /* Major145Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E4A59F225C37B800814DFF /* Major145Player.swift */; };
 		37E4A5A2225C546000814DFF /* MajorScaleQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E4A5A1225C546000814DFF /* MajorScaleQuestion.swift */; };
-		37E4A5A5225C54CE00814DFF /* MajorScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E4A5A4225C54CE00814DFF /* MajorScale.swift */; };
 		37EC509D225D93E200863132 /* NoteName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EC509C225D93E200863132 /* NoteName.swift */; };
 		37EC509F225D96F400863132 /* NoteNameUtilTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EC509E225D96F400863132 /* NoteNameUtilTest.swift */; };
 		4298794750FBC6ADAB394BF5 /* Pods_PortableEarTrainerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148ECC6A567C5AAE0D7ABDB9 /* Pods_PortableEarTrainerUITests.framework */; };
 		6D0CE8A73864B5A22475AAC5 /* Pods_PortableEarTrainerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 486A07E78B9F5DF5531C2296 /* Pods_PortableEarTrainerTests.framework */; };
+		789F8E03230877670075E381 /* CadencePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789F8E02230877670075E381 /* CadencePlayer.swift */; };
+		789F8E072308780C0075E381 /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789F8E062308780C0075E381 /* Scale.swift */; };
+		789F8E0923087CC20075E381 /* MajorScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789F8E0823087CC20075E381 /* MajorScale.swift */; };
+		789F8E0B23087D2A0075E381 /* ScalesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789F8E0A23087D2A0075E381 /* ScalesTest.swift */; };
+		789F8E0D230A4DEB0075E381 /* DiatonicChordVoicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789F8E0C230A4DEB0075E381 /* DiatonicChordVoicing.swift */; };
+		789F8E0F230A528F0075E381 /* DiatonicScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789F8E0E230A528F0075E381 /* DiatonicScale.swift */; };
 		8FB44E3D318B53366B6EC17A /* Pods_PortableEarTrainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE5C3177D1F53461B371189 /* Pods_PortableEarTrainer.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,13 +91,18 @@
 		37E2B4792294F516004AAE5F /* LessonSectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonSectionDataSource.swift; sourceTree = "<group>"; };
 		37E4A59F225C37B800814DFF /* Major145Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Major145Player.swift; sourceTree = "<group>"; };
 		37E4A5A1225C546000814DFF /* MajorScaleQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorScaleQuestion.swift; sourceTree = "<group>"; };
-		37E4A5A4225C54CE00814DFF /* MajorScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorScale.swift; sourceTree = "<group>"; };
 		37EC509C225D93E200863132 /* NoteName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteName.swift; sourceTree = "<group>"; };
 		37EC509E225D96F400863132 /* NoteNameUtilTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteNameUtilTest.swift; sourceTree = "<group>"; };
 		486A07E78B9F5DF5531C2296 /* Pods_PortableEarTrainerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PortableEarTrainerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49C697A36CC9012C6CD23028 /* Pods-PortableEarTrainerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainerTests/Pods-PortableEarTrainerTests.release.xcconfig"; sourceTree = "<group>"; };
 		4FE5C3177D1F53461B371189 /* Pods_PortableEarTrainer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PortableEarTrainer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E4A2AD8B2511565C013480F /* Pods-PortableEarTrainer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainer/Pods-PortableEarTrainer.debug.xcconfig"; sourceTree = "<group>"; };
+		789F8E02230877670075E381 /* CadencePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadencePlayer.swift; sourceTree = "<group>"; };
+		789F8E062308780C0075E381 /* Scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scale.swift; sourceTree = "<group>"; };
+		789F8E0823087CC20075E381 /* MajorScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorScale.swift; sourceTree = "<group>"; };
+		789F8E0A23087D2A0075E381 /* ScalesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalesTest.swift; sourceTree = "<group>"; };
+		789F8E0C230A4DEB0075E381 /* DiatonicChordVoicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiatonicChordVoicing.swift; sourceTree = "<group>"; };
+		789F8E0E230A528F0075E381 /* DiatonicScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiatonicScale.swift; sourceTree = "<group>"; };
 		87C9AB33D71DE5D3416D140B /* Pods-PortableEarTrainerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainerTests/Pods-PortableEarTrainerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D109088C50F095E385A83BA4 /* Pods-PortableEarTrainer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainer.release.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainer/Pods-PortableEarTrainer.release.xcconfig"; sourceTree = "<group>"; };
 		DD7A5E9586380C5253E815CA /* Pods-PortableEarTrainerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainerUITests/Pods-PortableEarTrainerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +162,7 @@
 		3722A5AF21F6935F00F5F353 /* PortableEarTrainer */ = {
 			isa = PBXGroup;
 			children = (
+				789F8E04230877ED0075E381 /* Model */,
 				374B2575228A580D00A8BB60 /* UI */,
 				37E4A5A3225C549700814DFF /* Util */,
 				37E4A59E225C374A00814DFF /* Service */,
@@ -177,6 +188,7 @@
 				3722A5C721F6936200F5F353 /* Info.plist */,
 				37EC509E225D96F400863132 /* NoteNameUtilTest.swift */,
 				370AE12022657FDE00C3C361 /* StatsTest.swift */,
+				789F8E0A23087D2A0075E381 /* ScalesTest.swift */,
 			);
 			path = PortableEarTrainerTests;
 			sourceTree = "<group>";
@@ -217,6 +229,7 @@
 				37E4A59F225C37B800814DFF /* Major145Player.swift */,
 				37E4A5A1225C546000814DFF /* MajorScaleQuestion.swift */,
 				3721E3FE226223C700A8E47B /* MajorScaleQuiz.swift */,
+				789F8E02230877670075E381 /* CadencePlayer.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -224,11 +237,37 @@
 		37E4A5A3225C549700814DFF /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				37E4A5A4225C54CE00814DFF /* MajorScale.swift */,
 				37EC509C225D93E200863132 /* NoteName.swift */,
 				370AE11E22657F9F00C3C361 /* Stats.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		789F8E04230877ED0075E381 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				789F8E10230A59E00075E381 /* Chord */,
+				789F8E05230877F90075E381 /* Scale */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		789F8E05230877F90075E381 /* Scale */ = {
+			isa = PBXGroup;
+			children = (
+				789F8E0E230A528F0075E381 /* DiatonicScale.swift */,
+				789F8E062308780C0075E381 /* Scale.swift */,
+				789F8E0823087CC20075E381 /* MajorScale.swift */,
+			);
+			path = Scale;
+			sourceTree = "<group>";
+		};
+		789F8E10230A59E00075E381 /* Chord */ = {
+			isa = PBXGroup;
+			children = (
+				789F8E0C230A4DEB0075E381 /* DiatonicChordVoicing.swift */,
+			);
+			path = Chord;
 			sourceTree = "<group>";
 		};
 		9C7EBCE80F9D7501A591A0F4 /* Pods */ = {
@@ -479,7 +518,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				37EC509D225D93E200863132 /* NoteName.swift in Sources */,
+				789F8E0F230A528F0075E381 /* DiatonicScale.swift in Sources */,
 				374B2577228A584400A8BB60 /* LessonCard.swift in Sources */,
+				789F8E03230877670075E381 /* CadencePlayer.swift in Sources */,
 				370AE11F22657F9F00C3C361 /* Stats.swift in Sources */,
 				3721E3FF226223C700A8E47B /* MajorScaleQuiz.swift in Sources */,
 				37B31213228A64A2003719D4 /* SingleOctaveKeyboard.swift in Sources */,
@@ -489,14 +530,16 @@
 				37B0B1A82269897F0032AAC0 /* SpeechTestViewController.swift in Sources */,
 				378B59B12293A59500478667 /* LessonSection.swift in Sources */,
 				37D265F72262D896003103C3 /* MicTestViewController.swift in Sources */,
+				789F8E0D230A4DEB0075E381 /* DiatonicChordVoicing.swift in Sources */,
 				37E2B4782294F348004AAE5F /* LessonSectionDelegate.swift in Sources */,
 				37D5750B225EE3C00042CC83 /* QuizViewController.swift in Sources */,
 				37E4A5A2225C546000814DFF /* MajorScaleQuestion.swift in Sources */,
-				37E4A5A5225C54CE00814DFF /* MajorScale.swift in Sources */,
+				789F8E072308780C0075E381 /* Scale.swift in Sources */,
 				37E4A5A0225C37B800814DFF /* Major145Player.swift in Sources */,
 				37E4A563225C0FA500814DFF /* DebuggerViewController.swift in Sources */,
 				3722A5B121F6935F00F5F353 /* AppDelegate.swift in Sources */,
 				374EA8822262EA1E00BC565B /* VoiceRecognitionTestViewController.swift in Sources */,
+				789F8E0923087CC20075E381 /* MajorScale.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +549,7 @@
 			files = (
 				37EC509F225D96F400863132 /* NoteNameUtilTest.swift in Sources */,
 				3722A5C621F6936200F5F353 /* PortableEarTrainerTests.swift in Sources */,
+				789F8E0B23087D2A0075E381 /* ScalesTest.swift in Sources */,
 				370AE12122657FDE00C3C361 /* StatsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

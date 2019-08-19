@@ -11,6 +11,7 @@ import AudioKit
 
 class MajorScaleQuestion {
     let major145Player: Major145Player = Major145Player()
+    var scale: MajorScale = MajorScale()
     var key: MIDINoteNumber
     var targetScaleDegree: Int
 
@@ -34,7 +35,7 @@ class MajorScaleQuestion {
     }
 
     private func getTargetNoteNumber(keyStart: MIDINoteNumber) -> MIDINoteNumber {
-        let scaleOffset = UInt8(MajorScale.getScaleDegree(targetScaleDegree))
+        let scaleOffset = UInt8(scale.getScaleDegree(targetScaleDegree))
 
         return keyStart + scaleOffset
     }
