@@ -1,5 +1,5 @@
 //
-//  ChordVoicing.swift
+//  DiatonicChordVoicing.swift
 //  PortableEarTrainer
 //
 //  Created by Daniel Collins on 8/18/19.
@@ -16,10 +16,10 @@ class DiatonicChordVoicing {
     }
     
     func getTriad(_ rootScaleDegree: Int, maxNotesInScale: Int = 4) -> [Int] {
-        let scaleNotes = self.scale.getNotes();
-        let nextOctave = scaleNotes.map { $0 + 12 };
+        let scaleIntervals = self.scale.getIntervals();
+        let nextOctave = scaleIntervals.map { $0 + 12 };
         
-        let twoOctaveScale = scaleNotes + nextOctave;
+        let twoOctaveScaleIntervals = scaleIntervals + nextOctave;
         
         // degrees for triad
         let one = rootScaleDegree % 7;
@@ -29,7 +29,7 @@ class DiatonicChordVoicing {
         let degreesInChord = [one, three, five];
         
         var intervalsInChord: [Int] = [];
-        for (index, interval) in twoOctaveScale.enumerated() {
+        for (index, interval) in twoOctaveScaleIntervals.enumerated() {
             let degree = (index + 1) % 7;
             
             if (degreesInChord.contains(degree)) {
