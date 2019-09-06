@@ -13,7 +13,7 @@ import XCTest
 class ScalesTest: XCTestCase {
     
     func test1ChordDefinition() {
-        let majorScale: Scale = MajorScale2();
+        let majorScale: Scale = MajorScale();
         let voicing = DiatonicChordVoicing(majorScale);
         let oneChordNotes = voicing.getTriad(1);
         print("1 Chord");

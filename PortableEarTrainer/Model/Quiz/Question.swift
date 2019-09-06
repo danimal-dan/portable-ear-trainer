@@ -9,7 +9,12 @@
 import Foundation
 import AudioKit
 
-struct Question {
+class Question {
     var key: Key;
     var targetScaleDegree: Int;
+    
+    init(_ key: Key, _ targetScaleDegree: Int) {
+        self.key = key;
+        self.targetScaleDegree = targetScaleDegree;
+    }
 }

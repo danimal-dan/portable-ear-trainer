@@ -62,13 +62,13 @@ class QuizViewController: UIViewController, QuizDelegate {
         })
     }
 
-    func currentQuestionDidChange(currentQuestion: MajorScaleQuestion, index: Int) {
+    func currentQuestionDidChange(currentQuestion: Question, index: Int) {
         self.CurrentPositionLabel.text = "Question \(index + 1) of \(self.majorScaleQuiz.getTotalQuestions())"
-        do {
-            try currentQuestion.playSample()
-        } catch {
-            print("should be fine...")
-        }
+//        do {
+//            try currentQuestion.playSample()
+//        } catch {
+//            print("should be fine...")
+//        }
     }
 
     func answerCollectionDidChange(answerCollection: [Bool]) {

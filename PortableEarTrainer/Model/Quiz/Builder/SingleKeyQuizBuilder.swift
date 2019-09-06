@@ -22,7 +22,7 @@ class SingleKeyQuizBuilder: QuizBuilder {
     func buildQuiz() -> Quiz {
         
         var questions: [Question] = [];
-        for _ in 0...numberOfQuestions {
+        for _ in 0..<numberOfQuestions {
             questions.append(self.buildQuestion());
         }
         
@@ -32,7 +32,7 @@ class SingleKeyQuizBuilder: QuizBuilder {
     func buildQuestion() -> Question {
         let scaleDegree = getRandomScaleDegree();
         
-        return Question(key: key, targetScaleDegree: scaleDegree);
+        return Question(key, scaleDegree);
     }
     
     private func getRandomScaleDegree() -> Int {

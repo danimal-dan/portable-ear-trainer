@@ -8,10 +8,10 @@
 
 import Foundation
 
-protocol QuizDelegate {
-    func currentQuestionDidChange(currentQuestion: Question, index: Int)
+protocol QuizDelegate: class {
+    func currentQuestionDidChange(currentQuestion: Question, index: Int);
     
-    func answerCollectionDidChange(answerCollection: [Bool])
+    func answerCollectionDidChange(answerCollection: [Bool]);
 }
 
 class Quiz {

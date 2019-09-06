@@ -46,6 +46,7 @@
 		789F8E0B23087D2A0075E381 /* ScalesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789F8E0A23087D2A0075E381 /* ScalesTest.swift */; };
 		789F8E0D230A4DEB0075E381 /* DiatonicChordVoicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789F8E0C230A4DEB0075E381 /* DiatonicChordVoicing.swift */; };
 		789F8E0F230A528F0075E381 /* DiatonicScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789F8E0E230A528F0075E381 /* DiatonicScale.swift */; };
+		78B6DCAF2322A693004C989F /* QuizBuilderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B6DCAE2322A693004C989F /* QuizBuilderTest.swift */; };
 		8FB44E3D318B53366B6EC17A /* Pods_PortableEarTrainer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE5C3177D1F53461B371189 /* Pods_PortableEarTrainer.framework */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +116,7 @@
 		789F8E0A23087D2A0075E381 /* ScalesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalesTest.swift; sourceTree = "<group>"; };
 		789F8E0C230A4DEB0075E381 /* DiatonicChordVoicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiatonicChordVoicing.swift; sourceTree = "<group>"; };
 		789F8E0E230A528F0075E381 /* DiatonicScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiatonicScale.swift; sourceTree = "<group>"; };
+		78B6DCAE2322A693004C989F /* QuizBuilderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBuilderTest.swift; sourceTree = "<group>"; };
 		87C9AB33D71DE5D3416D140B /* Pods-PortableEarTrainerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainerTests/Pods-PortableEarTrainerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D109088C50F095E385A83BA4 /* Pods-PortableEarTrainer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainer.release.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainer/Pods-PortableEarTrainer.release.xcconfig"; sourceTree = "<group>"; };
 		DD7A5E9586380C5253E815CA /* Pods-PortableEarTrainerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortableEarTrainerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PortableEarTrainerUITests/Pods-PortableEarTrainerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				37EC509E225D96F400863132 /* NoteNameUtilTest.swift */,
 				370AE12022657FDE00C3C361 /* StatsTest.swift */,
 				789F8E0A23087D2A0075E381 /* ScalesTest.swift */,
+				78B6DCAE2322A693004C989F /* QuizBuilderTest.swift */,
 			);
 			path = PortableEarTrainerTests;
 			sourceTree = "<group>";
@@ -604,6 +607,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37EC509F225D96F400863132 /* NoteNameUtilTest.swift in Sources */,
+				78B6DCAF2322A693004C989F /* QuizBuilderTest.swift in Sources */,
 				3722A5C621F6936200F5F353 /* PortableEarTrainerTests.swift in Sources */,
 				789F8E0B23087D2A0075E381 /* ScalesTest.swift in Sources */,
 				370AE12122657FDE00C3C361 /* StatsTest.swift in Sources */,

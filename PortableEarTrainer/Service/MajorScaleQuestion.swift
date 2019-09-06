@@ -9,21 +9,21 @@
 import Foundation
 import AudioKit
 
-class MajorScaleQuestion {
+class MajorScaleQuestion : Question {
     let major145Player: Major145Player = Major145Player()
     var scale: MajorScale = MajorScale()
-    var key: MIDINoteNumber
-    var targetScaleDegree: Int
 
     init() {
-        key = MIDINoteNumber(random(in: 48...60))
-        targetScaleDegree = Int(random(in: 1...8))
+        let key = Key(startingNote: MIDINoteNumber(random(in: 48...60)), scale: MajorScale());
+        let targetScaleDegree = Int(random(in: 1...8));
+        
+        super.init(key, targetScaleDegree);
     }
 
     func playSample() throws {
-        let target = getTargetNoteNumber(keyStart: key)
-        print("KEY/TARGET", key, target)
-        try self.major145Player.playSequence(keyStartNote: key, targetNote: target)
+        let target = getTargetNoteNumber(keyStart: key.startingNote)
+        print("KEY/TARGET", key.startingNote, target)
+        try self.major145Player.playSequence(keyStartNote: key.startingNote, targetNote: target)
     }
 
     func stopSample() {
