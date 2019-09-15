@@ -22,6 +22,9 @@
 		378B59B12293A59500478667 /* LessonSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B59B02293A59500478667 /* LessonSection.swift */; };
 		37B0B1A82269897F0032AAC0 /* SpeechTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B0B1A72269897F0032AAC0 /* SpeechTestViewController.swift */; };
 		37B31213228A64A2003719D4 /* SingleOctaveKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B31212228A64A2003719D4 /* SingleOctaveKeyboard.swift */; };
+		37B70611230E0CE700356D8D /* PerformancePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B70610230E0CE700356D8D /* PerformancePlayer.swift */; };
+		37B70613230E0EA600356D8D /* BasePerformancePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B70612230E0EA600356D8D /* BasePerformancePlayer.swift */; };
+		37B70615230E0FBD00356D8D /* CadenceWithTargetPerformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B70614230E0FBD00356D8D /* CadenceWithTargetPerformance.swift */; };
 		37D265F72262D896003103C3 /* MicTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D265F62262D896003103C3 /* MicTestViewController.swift */; };
 		37D5750B225EE3C00042CC83 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D5750A225EE3C00042CC83 /* QuizViewController.swift */; };
 		37E2B4752294F272004AAE5F /* CoursesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2B4742294F272004AAE5F /* CoursesTabViewController.swift */; };
@@ -84,6 +87,9 @@
 		378B59B02293A59500478667 /* LessonSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonSection.swift; sourceTree = "<group>"; };
 		37B0B1A72269897F0032AAC0 /* SpeechTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechTestViewController.swift; sourceTree = "<group>"; };
 		37B31212228A64A2003719D4 /* SingleOctaveKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleOctaveKeyboard.swift; sourceTree = "<group>"; };
+		37B70610230E0CE700356D8D /* PerformancePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformancePlayer.swift; sourceTree = "<group>"; };
+		37B70612230E0EA600356D8D /* BasePerformancePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePerformancePlayer.swift; sourceTree = "<group>"; };
+		37B70614230E0FBD00356D8D /* CadenceWithTargetPerformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadenceWithTargetPerformance.swift; sourceTree = "<group>"; };
 		37D265F62262D896003103C3 /* MicTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicTestViewController.swift; sourceTree = "<group>"; };
 		37D5750A225EE3C00042CC83 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		37E2B4742294F272004AAE5F /* CoursesTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesTabViewController.swift; sourceTree = "<group>"; };
@@ -230,6 +236,9 @@
 				37E4A5A1225C546000814DFF /* MajorScaleQuestion.swift */,
 				3721E3FE226223C700A8E47B /* MajorScaleQuiz.swift */,
 				789F8E02230877670075E381 /* CadencePlayer.swift */,
+				37B70610230E0CE700356D8D /* PerformancePlayer.swift */,
+				37B70612230E0EA600356D8D /* BasePerformancePlayer.swift */,
+				37B70614230E0FBD00356D8D /* CadenceWithTargetPerformance.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -525,7 +534,9 @@
 				3721E3FF226223C700A8E47B /* MajorScaleQuiz.swift in Sources */,
 				37B31213228A64A2003719D4 /* SingleOctaveKeyboard.swift in Sources */,
 				37E2B47A2294F516004AAE5F /* LessonSectionDataSource.swift in Sources */,
+				37B70615230E0FBD00356D8D /* CadenceWithTargetPerformance.swift in Sources */,
 				37E2B4752294F272004AAE5F /* CoursesTabViewController.swift in Sources */,
+				37B70611230E0CE700356D8D /* PerformancePlayer.swift in Sources */,
 				373D8B9D2266DAFE00194973 /* PitchResponseAnalyzer.swift in Sources */,
 				37B0B1A82269897F0032AAC0 /* SpeechTestViewController.swift in Sources */,
 				378B59B12293A59500478667 /* LessonSection.swift in Sources */,
@@ -533,6 +544,7 @@
 				789F8E0D230A4DEB0075E381 /* DiatonicChordVoicing.swift in Sources */,
 				37E2B4782294F348004AAE5F /* LessonSectionDelegate.swift in Sources */,
 				37D5750B225EE3C00042CC83 /* QuizViewController.swift in Sources */,
+				37B70613230E0EA600356D8D /* BasePerformancePlayer.swift in Sources */,
 				37E4A5A2225C546000814DFF /* MajorScaleQuestion.swift in Sources */,
 				789F8E072308780C0075E381 /* Scale.swift in Sources */,
 				37E4A5A0225C37B800814DFF /* Major145Player.swift in Sources */,

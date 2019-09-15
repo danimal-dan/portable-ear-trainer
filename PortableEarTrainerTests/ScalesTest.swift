@@ -11,20 +11,20 @@ import XCTest
 @testable import PortableEarTrainer
 
 class ScalesTest: XCTestCase {
-    
+
     func test1ChordDefinition() {
-        let majorScale: Scale = MajorScale2();
-        let voicing = DiatonicChordVoicing(majorScale);
-        let oneChordNotes = voicing.getTriad(1);
-        print("1 Chord");
-        print(oneChordNotes);
-        
-        let fourChordNotes = voicing.getTriad(4);
-        print("4 Chord");
-        print(fourChordNotes);
-        
-        let fiveChordNotes = voicing.getTriad(5);
-        print("5 Chord");
-        print(fiveChordNotes);
+        let majorScale: Scale = MajorScale()
+        let voicing = DiatonicChordVoicing(majorScale)
+        let oneChordNotes = voicing.getTriad(1)
+        print("1 Chord")
+        print(oneChordNotes)
+
+        let fourChordNotes = voicing.getTriad(4)
+        print("4 Chord")
+        print(fourChordNotes)
+
+        let fiveChordNotes = voicing.getTriad(5)
+        print("5 Chord")
+        print(fiveChordNotes)
     }
 }

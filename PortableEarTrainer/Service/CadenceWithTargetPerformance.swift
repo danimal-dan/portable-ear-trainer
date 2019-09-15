@@ -1,27 +1,21 @@
 //
-//  Major145Player.swift
+//  CadenceWithTargetPerformance.swift
 //  PortableEarTrainer
 //
-//  Created by Daniel Collins on 4/8/19.
+//  Created by Daniel Collins on 8/21/19.
 //  Copyright © 2019 Daniel Collins. All rights reserved.
 //
 
 import Foundation
 import AudioKit
 
-class Major145Player {
-    private var bank: AKOscillatorBank
-    private var performance: AKPeriodicFunction?
+class CadenceWithTargetPerformance: BasePerformancePlayer {
     private var startNote: MIDINoteNumber = MIDINoteNumber(60)
     private var targetNote: MIDINoteNumber = MIDINoteNumber(60)
-    private var chordVoicing: DiatonicChordVoicing = DiatonicChordVoicing(MajorScale())
+    private var chordVoicing: DiatonicChordVoicing
 
-    init() {
-        bank = AKOscillatorBank(waveform: AKTable(.triangle),
-                                attackDuration: 0.001,
-                                decayDuration: 0.3,
-                                sustainLevel: 0.1,
-                                releaseDuration: 0.2)
+    init(_ scale: Scale) {
+        self.chordVoicing = DiatonicChordVoicing(scale)
     }
 
     func playSequence(keyStartNote: MIDINoteNumber, targetNote: MIDINoteNumber) throws {
@@ -33,22 +27,7 @@ class Major145Player {
         self.targetNote = targetNote
         initPerformance()
 
-        if let performance = self.performance {
-            AudioKit.output = self.bank
-            try AudioKit.start(withPeriodicFunctions: performance)
-            performance.start()
-        }
-    }
-
-    func stopSequence() {
-        if let performance = self.performance {
-            performance.stop()
-            do {
-                try AudioKit.stop()
-            } catch {
-                print("Could not stop audiokit")
-            }
-        }
+        try self.play()
     }
 
     private func initPerformance() {
@@ -81,7 +60,7 @@ class Major145Player {
             iteration += 1
 
             if iteration > 8 {
-                self.stopSequence()
+                self.stop()
             }
         }
     }
@@ -96,11 +75,5 @@ class Major145Player {
         for tone in chordTones {
             bank.stop(noteNumber: self.startNote + UInt8(tone))
         }
-    }
-
-    deinit {
-        self.stopSequence()
-        self.performance?.detach()
-        self.bank.detach()
     }
 }

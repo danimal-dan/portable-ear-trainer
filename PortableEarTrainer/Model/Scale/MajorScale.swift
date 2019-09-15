@@ -9,5 +9,5 @@
 import Foundation
 
 class MajorScale: DiatonicScale {
-    static let notes: [Int] = [0, 2, 4, 5, 7, 9, 11];
+    static let notes: [Int] = [0, 2, 4, 5, 7, 9, 11]
 }
