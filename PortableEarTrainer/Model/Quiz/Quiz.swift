@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol QuizDelegate: AnyObject {
+protocol QuizDelegate: class {
     func currentQuestionDidChange(currentQuestion: Question, index: Int)
 
     func answerCollectionDidChange(answerCollection: [Bool])

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Scale.swift
 //  PortableEarTrainer
 //
 //  Created by Daniel Collins on 8/17/19.
@@ -9,16 +9,16 @@
 import Foundation
 
 protocol Scale {
-    static var notes: [Int] { get }
+    static var intervals: [Int] { get }
 
-    func getNotes() -> [Int]
+    func getIntervals() -> [Int]
 
     func getScaleDegree(_ degree: Int) -> Int
 }
 
 extension Scale {
-    func getNotes() -> [Int] {
-        return Self.notes
+    func getIntervals() -> [Int] {
+        return Self.intervals
     }
 
     /**
@@ -27,10 +27,10 @@ extension Scale {
     */
     func getScaleDegree(_ degree: Int) -> Int {
         assert(degree > 0)
-        let noteCount = Self.notes.count
+        let noteCount = Self.intervals.count
 
         let octaveOffset: Int = Int(floor(Double(degree) / Double(noteCount)) * 12)
 
-        return Self.notes[(degree - 1) % (noteCount - 1)] + octaveOffset
+        return Self.intervals[(degree - 1) % (noteCount - 1)] + octaveOffset
     }
 }

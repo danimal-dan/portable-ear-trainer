@@ -8,12 +8,6 @@
 
 import Foundation
 
-protocol QuizDelegate: AnyObject {
-    func currentQuestionDidChange(currentQuestion: MajorScaleQuestion, index: Int)
-
-    func answerCollectionDidChange(answerCollection: [Bool])
-}
-
 class MajorScaleQuiz {
     private var numberOfQuestions = 20
     private var questions: [MajorScaleQuestion] = []
