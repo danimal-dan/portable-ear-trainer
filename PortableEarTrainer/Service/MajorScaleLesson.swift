@@ -1,5 +1,5 @@
 //
-//  MajorScaleQuiz.swift
+//  MajorScaleLesson.swift
 //  PortableEarTrainer
 //
 //  Created by Daniel Collins on 4/13/19.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-class MajorScaleQuiz {
+class MajorScaleLesson {
     private var numberOfQuestions = 20
     private var questions: [MajorScaleQuestion] = []
     private var answerResults: [Bool] = []
     private var currentPosition: Int = -1
-    weak var delegate: QuizDelegate?
+    weak var delegate: LessonDelegate?
 
     init(_ numberOfQuestions: Int = 20) {
         self.numberOfQuestions = numberOfQuestions
@@ -37,7 +37,7 @@ class MajorScaleQuiz {
         return questions[currentPosition]
     }
 
-    public func startQuiz() {
+    public func startLesson() {
         self.loadNextQuestion()
         delegate?.answerCollectionDidChange(answerCollection: answerResults)
     }

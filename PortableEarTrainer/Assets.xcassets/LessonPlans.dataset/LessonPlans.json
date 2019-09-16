@@ -1,0 +1,43 @@
+{
+  "info": {
+    "version": 1,
+    "author": "Daniel Collins"
+  },
+  "data": [
+    {
+      "name": "Major Scale Lessons",
+      "lessons": [
+        {
+          "name": "Major Scale Lesson 1",
+          "type": "SingleKeyLesson",
+          "numberOfQuestions": 20,
+          "scaleDegreesToTest": [1, 2, 3, 4],
+          "key": {
+            "startNote": 60,
+            "scale": "Major"
+          }
+        },
+        {
+          "name": "Major Scale Lesson 2",
+          "type": "SingleKeyLesson",
+          "numberOfQuestions": 20,
+          "scaleDegreesToTest": [5, 6, 7, 8],
+          "key": {
+            "startNote": 60,
+            "scale": "Major"
+          }
+        },
+        {
+          "name": "Major Scale Lesson 3",
+          "type": "SingleKeyLesson",
+          "numberOfQuestions": 20,
+          "scaleDegreesToTest": [1, 2, 3, 4, 5, 6, 7, 8],
+          "key": {
+            "startNote": 60,
+            "scale": "Major"
+          }
+        }
+      ]
+    }
+  ]
+}

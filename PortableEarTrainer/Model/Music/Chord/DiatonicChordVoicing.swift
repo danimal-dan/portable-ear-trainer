@@ -32,7 +32,7 @@ class DiatonicChordVoicing {
         for (index, interval) in twoOctaveScaleIntervals.enumerated() {
             let degree = (index + 1) % 7
 
-            if (degreesInChord.contains(degree)) {
+            if degreesInChord.contains(degree) {
                 intervalsInChord.append(interval)
             }
         }

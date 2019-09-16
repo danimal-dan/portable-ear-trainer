@@ -1,5 +1,5 @@
 //
-//  Quiz.swift
+//  Lesson.swift
 //  PortableEarTrainer
 //
 //  Created by Daniel Collins on 8/19/19.
@@ -8,18 +8,20 @@
 
 import Foundation
 
-protocol QuizDelegate: class {
+protocol LessonDelegate: class {
     func currentQuestionDidChange(currentQuestion: Question, index: Int)
 
     func answerCollectionDidChange(answerCollection: [Bool])
 }
 
-class Quiz {
-    var delegate: QuizDelegate?
+class Lesson {
+    weak var delegate: LessonDelegate?
+    var name: String
     var questions: [Question]
     var answers: [Answer] = []
 
-    init(_ questions: [Question]) {
+    init(_ name: String, questions: [Question]) {
+        self.name = name
         self.questions = questions
     }
 }

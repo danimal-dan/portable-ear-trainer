@@ -15,7 +15,6 @@ class CoursesTabViewController: UIViewController, LessonSectionDelegate, LessonS
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         addMajorScaleLessons()
         majorScaleLessonSection.delegate = self
         majorScaleLessonSection.dataSource = self

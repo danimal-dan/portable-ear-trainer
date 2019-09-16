@@ -1,5 +1,5 @@
 //
-//  QuizBuilderTest.swift
+//  LessonBuilderTest.swift
 //  PortableEarTrainerTests
 //
 //  Created by Daniel Collins on 9/6/19.
@@ -11,39 +11,18 @@ import XCTest
 import AudioKit
 @testable import PortableEarTrainer
 
-class QuizBuilderTest: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+class LessonBuilderTest: XCTestCase {
 
     func testSingleKeyBuilder() {
         let key = Key(startingNote: MIDINoteNumber(60), scale: MajorScale())
         let numberOfQuestions = 5
         let scaleDegreesToTest = [1, 2, 3, 4]
-        let builder = SingleKeyQuizBuilder(key, scaleDegreesToTest: scaleDegreesToTest, numberOfQuestions: numberOfQuestions)
+        let builder = SingleKeyLessonBuilder("Test", key: key, scaleDegreesToTest: scaleDegreesToTest, numberOfQuestions: numberOfQuestions)
 
-        let quiz = builder.buildQuiz()
+        let quiz = builder.buildLesson()
 
         assert(quiz.questions.count == numberOfQuestions, "Question count does not match provided amount")
-        quiz.questions.forEach({
-            question in
+        quiz.questions.forEach({ question in
             let isInAvailableQuestions = scaleDegreesToTest.contains(question.targetScaleDegree)
             assert(isInAvailableQuestions, "'Question.answer' should always be one of the provided scale degrees.")
 

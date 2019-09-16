@@ -1,5 +1,5 @@
 //
-//  QuizViewController.swift
+//  LessonViewController.swift
 //  PortableEarTrainer
 //
 //  Created by Daniel Collins on 4/10/19.
@@ -8,26 +8,26 @@
 
 import UIKit
 
-class QuizViewController: UIViewController, QuizDelegate {
+class LessonViewController: UIViewController, LessonDelegate {
     @IBOutlet weak var PlayButton: UIButton!
     @IBOutlet weak var CurrentPositionLabel: UILabel!
     @IBOutlet weak var CurrentScoreLabel: UILabel!
 
-    var majorScaleQuiz: MajorScaleQuiz = MajorScaleQuiz()
+    var majorScaleLesson: MajorScaleLesson = MajorScaleLesson()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.majorScaleQuiz.delegate = self
-        self.majorScaleQuiz.startQuiz()
+        self.majorScaleLesson.delegate = self
+        self.majorScaleLesson.startLesson()
         PlayButton.isEnabled = true
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        self.majorScaleQuiz.cancel()
+        self.majorScaleLesson.cancel()
     }
 
     @IBAction func onPlayButtonTap(_ sender: Any) {
-        self.majorScaleQuiz.playQuestionSample()
+        self.majorScaleLesson.playQuestionSample()
     }
 
     @IBAction func quitButtonTapped(_ sender: Any) {
@@ -42,11 +42,11 @@ class QuizViewController: UIViewController, QuizDelegate {
         let selectedScaleDegree = Int(button.tag)
         print("scale degree selected: ", selectedScaleDegree)
 
-        let isCorrect = self.majorScaleQuiz.answerQuestion(selectedScaleDegree)
+        let isCorrect = self.majorScaleLesson.answerQuestion(selectedScaleDegree)
 
         print(isCorrect ? "CORRECT" : "WRONG")
         playAnswerResponseAnimation(isCorrect) { _ in
-            self.majorScaleQuiz.loadNextQuestion()
+            self.majorScaleLesson.loadNextQuestion()
         }
     }
 
@@ -63,7 +63,7 @@ class QuizViewController: UIViewController, QuizDelegate {
     }
 
     func currentQuestionDidChange(currentQuestion: Question, index: Int) {
-        self.CurrentPositionLabel.text = "Question \(index + 1) of \(self.majorScaleQuiz.getTotalQuestions())"
+        self.CurrentPositionLabel.text = "Question \(index + 1) of \(self.majorScaleLesson.getTotalQuestions())"
 //        do {
 //            try currentQuestion.playSample()
 //        } catch {

@@ -1,5 +1,5 @@
 //
-//  QuizIterator.swift
+//  LessonIterator.swift
 //  PortableEarTrainer
 //
 //  Created by Daniel Collins on 8/19/19.

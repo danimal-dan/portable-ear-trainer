@@ -1,5 +1,5 @@
 //
-//  QuizBuilder.swift
+//  LessonBuilder.swift
 //  PortableEarTrainer
 //
 //  Created by Daniel Collins on 8/19/19.
@@ -8,10 +8,10 @@
 
 import Foundation
 
-protocol QuizBuilder {
+protocol LessonBuilder {
     var numberOfQuestions: Int { get }
 
-    func buildQuiz() -> Quiz
+    func buildLesson() -> Lesson
 
     func buildQuestion() -> Question
 }
