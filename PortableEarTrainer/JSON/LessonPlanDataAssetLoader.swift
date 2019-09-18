@@ -20,9 +20,13 @@ class LessonPlanDataAssetLoader {
     }
 
     private static func convertAssetToJsonDictionary(_ asset: NSDataAsset) throws -> [String: Any] {
-        let jsonDictionary = try JSONSerialization.jsonObject(with: asset.data, options: [])
+        let jsonObject = try JSONSerialization.jsonObject(with: asset.data, options: [])
 
-        return jsonDictionary as! [String: Any]
+        guard let jsonDictionary = jsonObject as? [String: Any] else {
+            fatalError("Could not convert '\(LESSON_PLAN_ASSET_NAME)' NSDataAsset to dictionary.")
+        }
+
+        return jsonDictionary
     }
 
     private static func loadAsset() throws -> NSDataAsset {
