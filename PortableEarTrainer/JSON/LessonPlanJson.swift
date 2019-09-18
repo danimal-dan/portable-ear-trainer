@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct LessonPlanJSON: Codable {
+struct LessonPlanJson: Codable {
     var name: String
-    var lessons: [LessonJSON]
+    var lessons: [LessonJson]
 
     init(dictionary: [String: Any]) throws {
-        self = try JSONDecoder().decode(LessonPlanJSON.self, from: JSONSerialization.data(withJSONObject: dictionary))
+        self = try JSONDecoder().decode(LessonPlanJson.self, from: JSONSerialization.data(withJSONObject: dictionary))
     }
 
     private enum CodingKeys: String, CodingKey {

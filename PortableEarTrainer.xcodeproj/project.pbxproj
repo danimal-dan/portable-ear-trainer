@@ -21,11 +21,12 @@
 		374EA8822262EA1E00BC565B /* VoiceRecognitionTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374EA8812262EA1E00BC565B /* VoiceRecognitionTestViewController.swift */; };
 		376E4F55232EEC4100B2850D /* LessonPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E4F54232EEC4100B2850D /* LessonPlan.swift */; };
 		376E4F57232EF94100B2850D /* LessonPlanDataAssetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E4F56232EF94100B2850D /* LessonPlanDataAssetTests.swift */; };
-		376E4F5A232EFFDC00B2850D /* LessonJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E4F59232EFFDC00B2850D /* LessonJSON.swift */; };
-		376E4F5C232EFFEA00B2850D /* LessonPlanJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E4F5B232EFFEA00B2850D /* LessonPlanJSON.swift */; };
-		376E4F5E232F001F00B2850D /* LessonPlanDataAssetJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E4F5D232F001F00B2850D /* LessonPlanDataAssetJSON.swift */; };
-		376E4F60232F003E00B2850D /* DataAssetInfoJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E4F5F232F003E00B2850D /* DataAssetInfoJSON.swift */; };
-		376E4F62232F010B00B2850D /* KeyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E4F61232F010B00B2850D /* KeyJSON.swift */; };
+		376E4F5A232EFFDC00B2850D /* LessonJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E4F59232EFFDC00B2850D /* LessonJson.swift */; };
+		376E4F5C232EFFEA00B2850D /* LessonPlanJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E4F5B232EFFEA00B2850D /* LessonPlanJson.swift */; };
+		376E4F5E232F001F00B2850D /* LessonPlanDataAssetJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E4F5D232F001F00B2850D /* LessonPlanDataAssetJson.swift */; };
+		376E4F60232F003E00B2850D /* DataAssetInfoJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E4F5F232F003E00B2850D /* DataAssetInfoJson.swift */; };
+		376E4F62232F010B00B2850D /* KeyJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E4F61232F010B00B2850D /* KeyJson.swift */; };
+		376E4F652331C62300B2850D /* LessonPlanDataAssetLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E4F642331C62300B2850D /* LessonPlanDataAssetLoader.swift */; };
 		378B59B12293A59500478667 /* LessonSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B59B02293A59500478667 /* LessonSection.swift */; };
 		37B0B1A82269897F0032AAC0 /* SpeechTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B0B1A72269897F0032AAC0 /* SpeechTestViewController.swift */; };
 		37B31213228A64A2003719D4 /* SingleOctaveKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B31212228A64A2003719D4 /* SingleOctaveKeyboard.swift */; };
@@ -100,11 +101,12 @@
 		374EA8812262EA1E00BC565B /* VoiceRecognitionTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecognitionTestViewController.swift; sourceTree = "<group>"; };
 		376E4F54232EEC4100B2850D /* LessonPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonPlan.swift; sourceTree = "<group>"; };
 		376E4F56232EF94100B2850D /* LessonPlanDataAssetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonPlanDataAssetTests.swift; sourceTree = "<group>"; };
-		376E4F59232EFFDC00B2850D /* LessonJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonJSON.swift; sourceTree = "<group>"; };
-		376E4F5B232EFFEA00B2850D /* LessonPlanJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonPlanJSON.swift; sourceTree = "<group>"; };
-		376E4F5D232F001F00B2850D /* LessonPlanDataAssetJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonPlanDataAssetJSON.swift; sourceTree = "<group>"; };
-		376E4F5F232F003E00B2850D /* DataAssetInfoJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAssetInfoJSON.swift; sourceTree = "<group>"; };
-		376E4F61232F010B00B2850D /* KeyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyJSON.swift; sourceTree = "<group>"; };
+		376E4F59232EFFDC00B2850D /* LessonJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonJson.swift; sourceTree = "<group>"; };
+		376E4F5B232EFFEA00B2850D /* LessonPlanJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonPlanJson.swift; sourceTree = "<group>"; };
+		376E4F5D232F001F00B2850D /* LessonPlanDataAssetJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonPlanDataAssetJson.swift; sourceTree = "<group>"; };
+		376E4F5F232F003E00B2850D /* DataAssetInfoJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAssetInfoJson.swift; sourceTree = "<group>"; };
+		376E4F61232F010B00B2850D /* KeyJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyJson.swift; sourceTree = "<group>"; };
+		376E4F642331C62300B2850D /* LessonPlanDataAssetLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonPlanDataAssetLoader.swift; sourceTree = "<group>"; };
 		378B59B02293A59500478667 /* LessonSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonSection.swift; sourceTree = "<group>"; };
 		37B0B1A72269897F0032AAC0 /* SpeechTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechTestViewController.swift; sourceTree = "<group>"; };
 		37B31212228A64A2003719D4 /* SingleOctaveKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleOctaveKeyboard.swift; sourceTree = "<group>"; };
@@ -252,11 +254,12 @@
 		376E4F58232EFFCD00B2850D /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				376E4F59232EFFDC00B2850D /* LessonJSON.swift */,
-				376E4F5B232EFFEA00B2850D /* LessonPlanJSON.swift */,
-				376E4F5D232F001F00B2850D /* LessonPlanDataAssetJSON.swift */,
-				376E4F5F232F003E00B2850D /* DataAssetInfoJSON.swift */,
-				376E4F61232F010B00B2850D /* KeyJSON.swift */,
+				376E4F59232EFFDC00B2850D /* LessonJson.swift */,
+				376E4F5B232EFFEA00B2850D /* LessonPlanJson.swift */,
+				376E4F5D232F001F00B2850D /* LessonPlanDataAssetJson.swift */,
+				376E4F5F232F003E00B2850D /* DataAssetInfoJson.swift */,
+				376E4F61232F010B00B2850D /* KeyJson.swift */,
+				376E4F642331C62300B2850D /* LessonPlanDataAssetLoader.swift */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -615,25 +618,26 @@
 				376E4F55232EEC4100B2850D /* LessonPlan.swift in Sources */,
 				78625DC2230B8E83002F28EC /* LessonBuilder.swift in Sources */,
 				370AE11F22657F9F00C3C361 /* Stats.swift in Sources */,
-				376E4F5A232EFFDC00B2850D /* LessonJSON.swift in Sources */,
+				376E4F5A232EFFDC00B2850D /* LessonJson.swift in Sources */,
 				3721E3FF226223C700A8E47B /* MajorScaleLesson.swift in Sources */,
+				376E4F652331C62300B2850D /* LessonPlanDataAssetLoader.swift in Sources */,
 				37B31213228A64A2003719D4 /* SingleOctaveKeyboard.swift in Sources */,
 				37E2B47A2294F516004AAE5F /* LessonSectionDataSource.swift in Sources */,
 				37B70615230E0FBD00356D8D /* CadenceWithTargetPerformance.swift in Sources */,
 				37E2B4752294F272004AAE5F /* CoursesTabViewController.swift in Sources */,
 				37B70611230E0CE700356D8D /* PerformancePlayer.swift in Sources */,
 				373D8B9D2266DAFE00194973 /* PitchResponseAnalyzer.swift in Sources */,
-				376E4F62232F010B00B2850D /* KeyJSON.swift in Sources */,
+				376E4F62232F010B00B2850D /* KeyJson.swift in Sources */,
 				78625DC0230B63E9002F28EC /* Question.swift in Sources */,
 				78625DC7230B8F07002F28EC /* Key.swift in Sources */,
 				37B0B1A82269897F0032AAC0 /* SpeechTestViewController.swift in Sources */,
 				378B59B12293A59500478667 /* LessonSection.swift in Sources */,
-				376E4F5E232F001F00B2850D /* LessonPlanDataAssetJSON.swift in Sources */,
+				376E4F5E232F001F00B2850D /* LessonPlanDataAssetJson.swift in Sources */,
 				37D265F72262D896003103C3 /* MicTestViewController.swift in Sources */,
 				789F8E0D230A4DEB0075E381 /* DiatonicChordVoicing.swift in Sources */,
 				37E2B4782294F348004AAE5F /* LessonSectionDelegate.swift in Sources */,
 				37D5750B225EE3C00042CC83 /* LessonViewController.swift in Sources */,
-				376E4F5C232EFFEA00B2850D /* LessonPlanJSON.swift in Sources */,
+				376E4F5C232EFFEA00B2850D /* LessonPlanJson.swift in Sources */,
 				37B70613230E0EA600356D8D /* BasePerformancePlayer.swift in Sources */,
 				37E4A5A2225C546000814DFF /* MajorScaleQuestion.swift in Sources */,
 				78625DBE230B635C002F28EC /* Lesson.swift in Sources */,
@@ -645,7 +649,7 @@
 				3722A5B121F6935F00F5F353 /* AppDelegate.swift in Sources */,
 				374EA8822262EA1E00BC565B /* VoiceRecognitionTestViewController.swift in Sources */,
 				789F8E0923087CC20075E381 /* MajorScale.swift in Sources */,
-				376E4F60232F003E00B2850D /* DataAssetInfoJSON.swift in Sources */,
+				376E4F60232F003E00B2850D /* DataAssetInfoJson.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -831,6 +835,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZTE636HF2Z;
 				INFOPLIST_FILE = PortableEarTrainer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -850,6 +855,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZTE636HF2Z;
 				INFOPLIST_FILE = PortableEarTrainer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

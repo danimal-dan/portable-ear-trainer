@@ -12,29 +12,9 @@ import XCTest
 
 class LessonPlanDataAssetTests: XCTestCase {
 
-    func testCanLoadLessonPlansDataAsset() {
-        if let asset = NSDataAsset(name: "LessonPlans") {
-            let data = asset.data
-            let d = try? JSONSerialization.jsonObject(with: data, options: [])
-
-            assert(d != nil)
-        }
-    }
-
     func testCanDecodeLessonPlansDataAsset() {
-        if let asset = NSDataAsset(name: "LessonPlans") {
-            let data = asset.data
-            let d = try? JSONSerialization.jsonObject(with: data, options: [])
-
-            assert(d != nil)
-
-            var dataAsset: LessonPlanDataAssetJSON?
-            if let dictionary = d as? [String: Any] {
-                dataAsset = try? LessonPlanDataAssetJSON(dictionary: dictionary)
-            }
-
-            assert(dataAsset != nil)
-        }
+        let dataAsset = try? LessonPlanDataAssetLoader.loadLessonPlanJson()
+        assert(dataAsset != nil)
     }
 
 }

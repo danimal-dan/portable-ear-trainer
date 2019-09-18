@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct DataAssetInfoJSON: Codable {
+struct DataAssetInfoJson: Codable {
     var version: Int
     var author: String
 
     init(dictionary: [String: Any]) throws {
-        self = try JSONDecoder().decode(DataAssetInfoJSON.self, from: JSONSerialization.data(withJSONObject: dictionary))
+        self = try JSONDecoder().decode(DataAssetInfoJson.self, from: JSONSerialization.data(withJSONObject: dictionary))
     }
 
     private enum CodingKeys: String, CodingKey {
