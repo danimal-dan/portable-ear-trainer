@@ -1,5 +1,5 @@
 //
-//  LessonJSON.swift
+//  LessonTemplate.swift
 //  PortableEarTrainer
 //
 //  Created by Daniel Collins on 9/15/19.
@@ -8,18 +8,18 @@
 
 import Foundation
 
-struct LessonJson: Codable {
+struct LessonTemplate: Codable {
     var name: String
-    var type: String
+    var lessonType: LessonType
     var numberOfQuestions: Int
     var scaleDegreesToTest: [Int]
-    var key: KeyJson
+    var key: KeyTemplate
 
     init(dictionary: [String: Any]) throws {
-        self = try JSONDecoder().decode(LessonJson.self, from: JSONSerialization.data(withJSONObject: dictionary))
+        self = try JSONDecoder().decode(LessonTemplate.self, from: JSONSerialization.data(withJSONObject: dictionary))
     }
 
     private enum CodingKeys: String, CodingKey {
-        case name, type, numberOfQuestions, scaleDegreesToTest, key
+        case name, lessonType, numberOfQuestions, scaleDegreesToTest, key
     }
 }

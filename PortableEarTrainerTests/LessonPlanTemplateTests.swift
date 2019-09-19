@@ -10,10 +10,10 @@ import Foundation
 import XCTest
 @testable import PortableEarTrainer
 
-class LessonPlanDataAssetTests: XCTestCase {
+class LessonPlanTemplateTests: XCTestCase {
 
     func testCanDecodeLessonPlansDataAsset() {
-        let dataAsset = try? LessonPlanDataAssetLoader.loadLessonPlanJson()
+        let dataAsset = try? LessonPlanDataAssetLoader.load()
         assert(dataAsset != nil)
     }
 

@@ -1,5 +1,5 @@
 //
-//  LessonPlanDataAssetJSON.swift
+//  LessonPlanDataAsset.swift
 //  PortableEarTrainer
 //
 //  Created by Daniel Collins on 9/15/19.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct LessonPlanDataAssetJson: Codable {
-    var info: DataAssetInfoJson
-    var data: [LessonPlanJson]
+struct LessonPlanDataAsset: Codable {
+    var info: DataAssetInfo
+    var data: [LessonPlanTemplate]
 
     init(dictionary: [String: Any]) throws {
-        self = try JSONDecoder().decode(LessonPlanDataAssetJson.self, from: JSONSerialization.data(withJSONObject: dictionary))
+        self = try JSONDecoder().decode(LessonPlanDataAsset.self, from: JSONSerialization.data(withJSONObject: dictionary))
     }
 
     private enum CodingKeys: String, CodingKey {

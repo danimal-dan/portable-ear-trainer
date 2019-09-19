@@ -1,5 +1,5 @@
 //
-//  DataAssetInfoJSON.swift
+//  DataAssetInfo.swift
 //  PortableEarTrainer
 //
 //  Created by Daniel Collins on 9/15/19.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct DataAssetInfoJson: Codable {
+struct DataAssetInfo: Codable {
     var version: Int
     var author: String
 
     init(dictionary: [String: Any]) throws {
-        self = try JSONDecoder().decode(DataAssetInfoJson.self, from: JSONSerialization.data(withJSONObject: dictionary))
+        self = try JSONDecoder().decode(DataAssetInfo.self, from: JSONSerialization.data(withJSONObject: dictionary))
     }
 
     private enum CodingKeys: String, CodingKey {

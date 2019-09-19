@@ -35,7 +35,7 @@ class MajorScaleQuestion: Question {
     }
 
     private func getTargetNoteNumber(keyStart: MIDINoteNumber) -> MIDINoteNumber {
-        let scaleOffset = UInt8(scale.getScaleDegree(targetScaleDegree))
+        let scaleOffset = UInt8(scale.getIntervalFor(scaleDegree: targetScaleDegree))
 
         return keyStart + scaleOffset
     }

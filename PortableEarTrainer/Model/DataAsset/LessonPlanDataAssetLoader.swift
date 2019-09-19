@@ -12,11 +12,11 @@ import UIKit
 class LessonPlanDataAssetLoader {
     private static let LESSON_PLAN_ASSET_NAME = "LessonPlans"
 
-    static func loadLessonPlanJson() throws -> LessonPlanDataAssetJson {
+    static func load() throws -> LessonPlanDataAsset {
         let asset = try loadAsset()
         let dictionary = try convertAssetToJsonDictionary(asset)
 
-        return try LessonPlanDataAssetJson(dictionary: dictionary)
+        return try LessonPlanDataAsset(dictionary: dictionary)
     }
 
     private static func convertAssetToJsonDictionary(_ asset: NSDataAsset) throws -> [String: Any] {

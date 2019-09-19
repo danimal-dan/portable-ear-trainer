@@ -1,5 +1,5 @@
 //
-//  KeyJSON.swift
+//  KeyTemplate.swift
 //  PortableEarTrainer
 //
 //  Created by Daniel Collins on 9/15/19.
@@ -8,15 +8,15 @@
 
 import Foundation
 
-struct KeyJson: Codable {
-    var scale: String
+struct KeyTemplate: Codable {
+    var scaleType: ScaleType
     var startNote: Int
 
     init(dictionary: [String: Any]) throws {
-        self = try JSONDecoder().decode(KeyJson.self, from: JSONSerialization.data(withJSONObject: dictionary))
+        self = try JSONDecoder().decode(KeyTemplate.self, from: JSONSerialization.data(withJSONObject: dictionary))
     }
 
     private enum CodingKeys: String, CodingKey {
-        case scale, startNote
+        case scaleType, startNote
     }
 }
