@@ -23,7 +23,7 @@ extension Scale {
 
     /**
         Returns the interval from the scale root for the given scale degree.
-        e.g. C maj: getScaleDegree(3) => 4
+        e.g. Major Scale: getIntervalFor(scaleDegree: 3) => 4
     */
     func getIntervalFor(scaleDegree: Int) -> Int {
         assert(scaleDegree > 0)
