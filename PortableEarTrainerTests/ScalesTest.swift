@@ -12,7 +12,7 @@ import XCTest
 
 class ScalesTest: XCTestCase {
 
-    func testIntervalFromDegree() {
+    func testMajorScaleIntervalFromDegree() {
         let majorScale: Scale = MajorScale()
 
         let scaleDegreeToIntervalRelations = [
@@ -33,6 +33,33 @@ class ScalesTest: XCTestCase {
             let scaleDegree = scaleDegreeToInterval.0
             let expectedInterval = scaleDegreeToInterval.1
             let actualInterval = majorScale.getIntervalFor(scaleDegree: scaleDegree)
+
+            print("Major Scale Degree \(scaleDegree). Expected: \(expectedInterval) Actual: \(actualInterval)")
+            assert(actualInterval == expectedInterval)
+        }
+    }
+
+    func testMinorScaleIntervalFromDegree() {
+        let minorScale: Scale = MinorScale()
+
+        let scaleDegreeToIntervalRelations = [
+            (1, 0),
+            (2, 2),
+            (3, 3),
+            (4, 5),
+            (5, 7),
+            (6, 9),
+            (7, 10),
+            (8, 12),
+            (9, 14),
+            (11, 17),
+            (13, 21)
+        ]
+
+        for scaleDegreeToInterval in scaleDegreeToIntervalRelations {
+            let scaleDegree = scaleDegreeToInterval.0
+            let expectedInterval = scaleDegreeToInterval.1
+            let actualInterval = minorScale.getIntervalFor(scaleDegree: scaleDegree)
 
             print("Major Scale Degree \(scaleDegree). Expected: \(expectedInterval) Actual: \(actualInterval)")
             assert(actualInterval == expectedInterval)
