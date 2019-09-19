@@ -11,9 +11,17 @@ import UIKit
 class CoursesTabViewController: UIViewController, LessonSectionDelegate, LessonSectionDataSource {
     @IBOutlet weak var majorScaleLessonSection: LessonSection!
     var majorScaleLessons: [LessonCard] = []
+    var lessonPlanTemplates: [LessonPlanTemplate] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        do {
+            let dataAsset = try LessonPlanDataAssetLoader.load()
+            lessonPlanTemplates = dataAsset.data
+        } catch {
+            fatalError("Could not load lesson plan templates.")
+        }
 
         addMajorScaleLessons()
         majorScaleLessonSection.delegate = self
@@ -21,24 +29,27 @@ class CoursesTabViewController: UIViewController, LessonSectionDelegate, LessonS
     }
 
     private func addMajorScaleLessons() {
-        let majorScaleLesson1 = LessonCard()
-        majorScaleLesson1.frame = CGRect.init(width: 250, height: 200)
-        majorScaleLesson1.bounds = CGRect.init(width: 250, height: 200)
-        majorScaleLesson1.cardPadding = 20
-        majorScaleLesson1.activeKeys = "0,2,4,5"
-        majorScaleLesson1.title = "Major Scale"
-        majorScaleLesson1.translatesAutoresizingMaskIntoConstraints = false
+        for lessonTemplate in lessonPlanTemplates[0].lessons {
+            let lesson = LessonCard()
+            lesson.frame = CGRect.init(width: 250, height: 200)
+            lesson.bounds = CGRect.init(width: 250, height: 200)
+            lesson.cardPadding = 20
+            lesson.activeKeys = getActiveKeys(from: lessonTemplate)
+            lesson.title = lessonTemplate.name
+            lesson.translatesAutoresizingMaskIntoConstraints = false
 
-        let majorScaleLesson2 = LessonCard()
-        majorScaleLesson2.frame = CGRect.init(width: 250, height: 200)
-        majorScaleLesson2.bounds = CGRect.init(width: 250, height: 200)
-        majorScaleLesson2.cardPadding = 20
-        majorScaleLesson2.activeKeys = "5,7,9,11"
-        majorScaleLesson2.title = "Major Scale 2"
-        majorScaleLesson2.translatesAutoresizingMaskIntoConstraints = false
+            majorScaleLessons.append(lesson)
+        }
+    }
 
-        majorScaleLessons.append(majorScaleLesson1)
-        majorScaleLessons.append(majorScaleLesson2)
+    private func getActiveKeys(from lessonTemplate: LessonTemplate) -> String {
+        let scale = ScaleFactory.scaleOf(type: lessonTemplate.key.scaleType)
+
+        let intervals = lessonTemplate.scaleDegreesToTest.map { scaleDegree in
+            return scale.getIntervalFor(scaleDegree: scaleDegree)
+        }
+
+        return intervals.map({ String($0) }).joined(separator: ",")
     }
 
     func numberOfRows(_ in: LessonSection) -> Int {
