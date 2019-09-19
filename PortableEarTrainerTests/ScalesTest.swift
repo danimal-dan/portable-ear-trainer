@@ -12,6 +12,33 @@ import XCTest
 
 class ScalesTest: XCTestCase {
 
+    func testIntervalFromDegree() {
+        let majorScale: Scale = MajorScale()
+
+        let scaleDegreeToIntervalRelations = [
+            (1, 0),
+            (2, 2),
+            (3, 4),
+            (4, 5),
+            (5, 7),
+            (6, 9),
+            (7, 11),
+            (8, 12),
+            (9, 14),
+            (11, 17),
+            (13, 21)
+        ]
+
+        for scaleDegreeToInterval in scaleDegreeToIntervalRelations {
+            let scaleDegree = scaleDegreeToInterval.0
+            let expectedInterval = scaleDegreeToInterval.1
+            let actualInterval = majorScale.getIntervalFor(scaleDegree: scaleDegree)
+
+            print("Major Scale Degree \(scaleDegree). Expected: \(expectedInterval) Actual: \(actualInterval)")
+            assert(actualInterval == expectedInterval)
+        }
+    }
+
     func test1ChordDefinition() {
         let majorScale: Scale = MajorScale()
         let voicing = DiatonicChordVoicing(majorScale)

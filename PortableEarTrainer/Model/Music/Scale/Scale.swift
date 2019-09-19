@@ -13,7 +13,7 @@ protocol Scale {
 
     func getIntervals() -> [Int]
 
-    func getScaleDegree(_ degree: Int) -> Int
+    func getIntervalFor(scaleDegree: Int) -> Int
 }
 
 extension Scale {
@@ -25,12 +25,12 @@ extension Scale {
         Returns the interval from the scale root for the given scale degree.
         e.g. C maj: getScaleDegree(3) => 4
     */
-    func getScaleDegree(_ degree: Int) -> Int {
-        assert(degree > 0)
+    func getIntervalFor(scaleDegree: Int) -> Int {
+        assert(scaleDegree > 0)
         let noteCount = Self.intervals.count
 
-        let octaveOffset: Int = Int(floor(Double(degree) / Double(noteCount)) * 12)
+        let octaveOffset: Int = Int(floor(Double(scaleDegree) / Double(noteCount + 1)) * 12)
 
-        return Self.intervals[(degree - 1) % (noteCount - 1)] + octaveOffset
+        return Self.intervals[(scaleDegree - 1) % noteCount] + octaveOffset
     }
 }
