@@ -14,7 +14,7 @@ class LessonPlanTemplateTests: XCTestCase {
 
     func testCanDecodeLessonPlansDataAsset() {
         let dataAsset = try? LessonPlanDataAssetLoader.load()
-        assert(dataAsset != nil)
+        XCTAssertNotNil(dataAsset)
     }
 
 }

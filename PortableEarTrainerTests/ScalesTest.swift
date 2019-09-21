@@ -35,7 +35,7 @@ class ScalesTest: XCTestCase {
             let actualInterval = majorScale.getIntervalFor(scaleDegree: scaleDegree)
 
             print("Major Scale Degree \(scaleDegree). Expected: \(expectedInterval) Actual: \(actualInterval)")
-            assert(actualInterval == expectedInterval)
+            XCTAssertEqual(actualInterval, expectedInterval)
         }
     }
 
@@ -62,7 +62,7 @@ class ScalesTest: XCTestCase {
             let actualInterval = minorScale.getIntervalFor(scaleDegree: scaleDegree)
 
             print("Major Scale Degree \(scaleDegree). Expected: \(expectedInterval) Actual: \(actualInterval)")
-            assert(actualInterval == expectedInterval)
+            XCTAssertEqual(actualInterval, expectedInterval)
         }
     }
 

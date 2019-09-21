@@ -15,12 +15,12 @@ class StatsTest: XCTestCase {
     func testAverage() {
         let list = [1.0, 2.0, 3.0]
         let avg = Stats.average(list)
-        assert(avg == 2.0)
+        XCTAssertEqual(avg, 2.0)
     }
 
     func testStandardDeviation() {
         let list = [1.0, 2.0, 3.0]
         let stdDeviation = Stats.standardDeviation(list)
-        assert(fabs(stdDeviation - 0.8164965809) < 0.000001)
+        XCTAssertLessThan(fabs(stdDeviation - 0.8164965809), 0.000001)
     }
 }

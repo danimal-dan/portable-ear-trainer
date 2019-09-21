@@ -21,16 +21,16 @@ class LessonBuilderTest: XCTestCase {
 
         let quiz = builder.buildLesson()
 
-        assert(quiz.questions.count == numberOfQuestions, "Question count does not match provided amount")
+        XCTAssertEqual(quiz.questions.count, numberOfQuestions, "Question count does not match provided amount")
         quiz.questions.forEach({ question in
             let isInAvailableQuestions = scaleDegreesToTest.contains(question.targetScaleDegree)
-            assert(isInAvailableQuestions, "'Question.answer' should always be one of the provided scale degrees.")
+            XCTAssertTrue(isInAvailableQuestions, "'Question.answer' should always be one of the provided scale degrees.")
 
             let isCorrectStartNote = question.key.startingNote == key.startingNote
-            assert(isCorrectStartNote, "'Question.key.startingNote' should match input.")
+            XCTAssertTrue(isCorrectStartNote, "'Question.key.startingNote' should match input.")
 
             let isCorrectScale = question.key.scale.getIntervals().elementsEqual(key.scale.getIntervals())
-            assert(isCorrectScale, "'Question.key.scale' should match input.")
+            XCTAssertTrue(isCorrectScale, "'Question.key.scale' should match input.")
 
         })
     }
